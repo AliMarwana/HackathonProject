@@ -41,12 +41,9 @@ namespace HackathonProject.Controllers
                 var State1 = _ads.ReadValue("LAC01.fbLacManager.stLacData.eOmState");
                 var Select1 = _ads.ReadValue("LAC01.fbLacManager.stLacData.eOmSelect");
 
-                return Json(new { isConnected = true });
+            
             }
-            //else
-            //{
-            //    return Json(new { isConnected = false });
-            //}
+
             return View();
         }
         public IActionResult Privacy()
