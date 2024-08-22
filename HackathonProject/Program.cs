@@ -1,3 +1,6 @@
+using HackathonProject.NewFolder;
+using TwinCAT.Ads;
+
 namespace HackathonProject
 {
     public class Program
@@ -8,6 +11,8 @@ namespace HackathonProject
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<AdsClient>();
+            builder.Services.AddScoped<GVariablesService>();
 
             var app = builder.Build();
 
