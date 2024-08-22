@@ -39,11 +39,11 @@ body {
 }
 
 .sidebar {
-    width: 220px;
+    width: auto;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     color: white;
-    padding: 15px;
+    padding: 5px;
     height: 100%
 }
 
@@ -75,8 +75,10 @@ body {
             color: #fff;
             border: none
         }
-
-main {
+        .sidebar ul li:hover {
+            background-color:#d2d2d2 !important
+        }
+    main {
     flex-grow: 1;
     padding: 20px;
     display: flex;
@@ -190,4 +192,32 @@ footer {
     padding: 10px;
     background-color: #333;
     color: white;
+}
+
+#header {
+    background-color: #37517e !important
+}
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px !important;
+    background-color: #37517e;
+    border: none !important
+}
+    .circle:hover {
+        background-color: #4065a5 !important
+    }
+.active-auto {
+    background-color: #008F28 !important
+    /*background-color: #008F28 !important*/
+}
+
+.logout {
+    bottom: 100px
+}
+
+.sidebar .active-menu, .active-menu path {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+    background-color: #37517E !important;
+    stroke:white
 }

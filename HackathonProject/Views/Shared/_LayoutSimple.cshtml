@@ -30,24 +30,29 @@
 </head>
 <body>
     <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top ">
-        <div class="container d-flex align-items-center mt-3">
+    <header id="header" class="fixed-to py-2">
+        <div class="container d-flex align-items-center">
 
-            <h1 class="logo mr-auto"><a asp-area="" asp-page="/Index">Gabera Software Solutions</a></h1>
-            <div class="w-25"></div>
-            <nav class="nav-menu d-none d-lg-block">
-                <ul>
-                    <li><a asp-area="" asp-page="/Index">Home</a></li>
-                    <li class="active"><a asp-area="" asp-page="/ConfigurationPage">Configuration</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#team">Team</a></li>
-                    <li><a href="#contact">Contact</a></li>
+            <h1 class="logo mr-auto"><a asp-area="" asp-controller="Home">Group 5</a></h1>
+            <nav class="nav-menu d-none d-lg-block d-flex align-items-center">
+                <ul class="d-flex align-items-center">
+                    <li class="mr-auto">
+                        <select class="get-started-btn text-black px-4 py-1 rounded-3 fs-6">
+                            <option>LAC01</option>
+                            <option>LAC02</option>
+                        </select>
+                    </li>
+                    <li><a asp-area="" asp-controller="Home">Home</a></li>
+                    <li><a href="#about" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/ic_baseline-not-started.svg" width="40" /></a></li>
+                    <li><a href="#about" class="get-started-btn circle d-flex justify-content-center active-auto"><img src="assets/img/icons/ic_outline-auto-mode.svg" width="30" /></a></li>
+                    <li><a href="#about" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/back-hand.svg" width="30" /></a></li>
+                    <li><a href="#about" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/support.svg" width="30" /></a></li>
+                    <li><a href="#about" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/start.svg" width="30" /></a></li>
+
                 </ul>
             </nav>
-            <a href="#about" class="get-started-btn scrollto">Rollback</a>
         </div>
     </header>
-    <section id="hero" class="d-flex align-items-center h-auto"></section>
     <div class="w-100 h-100">
         @RenderBody()
     </div>
