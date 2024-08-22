@@ -15,7 +15,7 @@ namespace HackathonProject.Controllers
         }
         public IActionResult Index()
         {
-            ads.Connect(851);
+            //ads.Connect(851);
 
             //if (ads.IsConnected)
             //{

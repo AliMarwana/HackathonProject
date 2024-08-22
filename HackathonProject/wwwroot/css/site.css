@@ -191,3 +191,59 @@ footer {
     background-color: #333;
     color: white;
 }
+.youss-row{
+    padding:1em;
+}
+.youss-card {
+    -webkit-box-shadow: 0px 4px 50px -10px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0px 4px 50px -10px rgba(0,0,0,0.23);
+    box-shadow: 0px 4px 50px -10px rgba(0,0,0,0.23);
+}
+.youss-btn {
+    background-color: #37517e !important;
+    color: #fff !important;
+}
+.youss-signal{
+    width:1em;
+    height:1em;
+    border-radius:50px;
+    background-color:red;
+}
+.youss-vl {
+    border-right: 2px solid #37517e;
+}
+.youss-second-card {
+    -webkit-box-shadow: 0px 8px 21px -7px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 8px 21px -7px rgba(0,0,0,0.4);
+    box-shadow: 0px 8px 21px -7px rgba(0,0,0,0.4);
+}
+.youss-light {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #37517e;
+}
+.youss-container {
+    /* Basic dimensions and centering */
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Dark mode colors and gradient */
+    background: #121212; /* Fallback for browsers that don't support gradients */
+    background: linear-gradient( 135deg, #f6a823 25%, #fff 25%, #fff 50%, #f6a823 50%, #f6a823 75%, #fff 75%, #fff );
+    background-size: 40px 40px;
+    /* Animation */
+    animation: move 4s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 40px 40px;
+    }
+}
+
