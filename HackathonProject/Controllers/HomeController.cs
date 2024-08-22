@@ -16,33 +16,33 @@ namespace HackathonProject.Controllers
         }
         public IActionResult Index()
         {
-            ads.Connect(AmsNetId.Local,851);
+            _ads.Connect(AmsNetId.Local,851);
             //ST_OperationMode.eOmState;
             //ST_OperationMode.eOmSelect
             //ST_OperationMode.bAccept
            
             //FB_LacManager.stLacData;
 
-            if (ads.IsConnected)
-            {
-                var bAccept = ads.ReadValue("LAC01.fbLacManager.stLacData.bAccept");
-                var State = ads.ReadValue("LAC01.fbLacManager.stLacData.eOmState");
-                var Select = ads.ReadValue("LAC01.fbLacManager.stLacData.eOmSelect");
+            //if (_ads.IsConnected)
+            //{
+            //    var bAccept = _ads.ReadValue("LAC01.fbLacManager.stLacData.bAccept");
+            //    var State = _ads.ReadValue("LAC01.fbLacManager.stLacData.eOmState");
+            //    var Select = _ads.ReadValue("LAC01.fbLacManager.stLacData.eOmSelect");
 
-                Console.WriteLine("Changement des valeurs");
+            //    Console.WriteLine("Changement des valeurs");
                 
-                ads.WriteValue("LAC01.fbLacManager.stLacData.bAccept", true);
-                ads.WriteValue("LAC01.fbLacManager.stLacData.eOmState",30);
-                ads.WriteValue("LAC01.fbLacManager.stLacData.eOmSelect",20);
+            //    _ads.WriteValue("LAC01.fbLacManager.stLacData.bAccept", true);
+            //    _ads.WriteValue("LAC01.fbLacManager.stLacData.eOmState",30);
+            //    _ads.WriteValue("LAC01.fbLacManager.stLacData.eOmSelect",20);
 
-                Console.WriteLine("ReLecture des valeurs");
+            //    Console.WriteLine("ReLecture des valeurs");
 
-                var bAccept1 = ads.ReadValue("LAC01.fbLacManager.stLacData.bAccept");
-                var State1 = ads.ReadValue("LAC01.fbLacManager.stLacData.eOmState");
-                var Select1 = ads.ReadValue("LAC01.fbLacManager.stLacData.eOmSelect");
+            //    var bAccept1 = _ads.ReadValue("LAC01.fbLacManager.stLacData.bAccept");
+            //    var State1 = _ads.ReadValue("LAC01.fbLacManager.stLacData.eOmState");
+            //    var Select1 = _ads.ReadValue("LAC01.fbLacManager.stLacData.eOmSelect");
 
-                return Json(new { isConnected = true });
-            }
+            //    return Json(new { isConnected = true });
+            //}
             //else
             //{
             //    return Json(new { isConnected = false });
