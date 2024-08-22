@@ -17,15 +17,15 @@ namespace HackathonProject.Controllers
         {
             ads.Connect(851);
 
-            if (ads.IsConnected)
-            {
-                return Json(new { isConnected = true });
-            }
-            else
-            {
-                return Json(new { isConnected = false });
-            }
-            //  return View();
+            //if (ads.IsConnected)
+            //{
+            //    return Json(new { isConnected = true });
+            //}
+            //else
+            //{
+            //    return Json(new { isConnected = false });
+            //}
+            return View();
         }
         public IActionResult Privacy()
         {

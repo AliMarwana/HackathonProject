@@ -1,0 +1,105 @@
+﻿@page
+@{
+    Layout = "_LayoutSimple";
+}
+<div class="configuration position-fixed">
+    <nav class="sidebar">
+        <ul>
+            @* <li>Dashboard</li> *@
+            <li class="active">System</li>
+            <li><img src="assets/img/icons/solar_settings-outline.svg" width="25" />Settings</li>
+            @* <li><img src="assets/img/icons/quill_info.svg" width="25" />System Info</li> *@
+            <li><img src="assets/img/icons/icons8_support.svg" width="25" />Support</li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="d-flex h-100">
+            <div>
+                <div class="d-flex gap-3">
+                    <div class="lac-card">
+                        <div>
+                            LAC01<img src="assets/img/icons/radix-icons_cross-circled.svg" width="25px" />
+                        </div>
+                        <div class="lac-status">Waiting</div>
+                    </div>
+                    <div class="lac-card">
+                        <div>
+                            LAC02<img src="assets/img/icons/radix-icons_cross-circled.svg" width="25px" />
+                        </div>
+                        <div class="lac-status bg-success">Running</div>
+                    </div>
+                </div>
+                <div class="d-flex h-100">
+                    <div class="status-card">
+                        <div class="d-flex align-items-center gap-3">
+                            <span class="label">Status: </span>
+                            <div class="status-indicator">
+                                <img src="assets/img/icons/emojione_warning.svg" width="25px" />
+                                <span class="label">Sous tension:</span> <span class="led on"></span>
+                            </div>
+                        </div>
+
+                        <div class="status-indicator-start">
+                            <button class="start-button"><img src="assets/img/icons/formkit_start.svg" width="70px" /></button>
+                        </div>
+                        <div class="d-flex status-indicator m-0 w-auto shadow-none">
+                            <span class="label">Mode:</span>
+                            <div class="d-flex gap-3">
+                                <button class="status-indicator border rounded-2 border-1 border-success">
+                                    <img src="assets/img/icons/ic_outline-auto-mode.svg" width="25px" />
+                                    <span class="label">Automatic</span> <span class="led on"></span>
+                                </button>
+                                <button class="status-indicator border rounded-2 border-1 border-white">
+                                    <img src="assets/img/icons/ic_outline-back-hand.svg" width="25px" />
+                                    <span class="label">Manual</span> <span class="led off"></span>
+                                </button>
+                            </div>
+                        </div>
+                        @* <div class="status-indicator">
+                        <span class="label">Mode:</span>
+                        <select>
+                        <option>Automatic</option>
+                        <option>Manual</option>
+                        </select>
+                        </div> *@
+                        <div class="info-system">
+                            <a href="#">System Info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="status-card w-100 h-100 d-flex flex-column gap-4">
+                <div class="w-100 h-50 bg-black pt-2 shadow">
+                    <span class="label text-white fw-normal ">Gabera> Project build completed successfully</span>&nbsp;<br /><br />
+                    <span class="label text-white fw-normal ">
+                        Gabera> $ deploy-app --env production
+
+                        [INFO] 2024-08-19 14:32:05 - Starting deployment process...
+                        [INFO] 2024-08-19 14:32:07 - Checking environment 'production'...
+                        [WARNING] 2024-08-19 14:32:10 - Environment variable 'API_KEY' is not set. Using default.
+                        [INFO] 2024-08-19 14:32:12 - Pulling latest code from repository...
+                        [INFO] 2024-08-19 14:32:15 - Installing dependencies...
+                        [ERROR] 2024-08-19 14:32:20 - Failed to install package 'some-package'. Retrying...
+                        [INFO] 2024-08-19 14:32:22 - Installation successful.
+                        [INFO] 2024-08-19 14:32:25 - Running tests...
+                        [ERROR] 2024-08-19 14:32:30 - Test 'testUserLogin' failed: Expected '200', got '500'.
+                        [INFO] 2024-08-19 14:32:35 - Skipping failed test and proceeding with deployment...
+                        [INFO] 2024-08-19 14:32:40 - Deploying application to production...
+                        [SUCCESS] 2024-08-19 14:32:50 - Deployment completed successfully!
+                    </span>
+                </div>
+                <div class="d-flex justify-content-around">
+                    <div class="d-flex flex-column align-items-center mt-2 gap-3">
+                        <img src="assets/img/icons/emojione_warning.svg" height="75" />
+                        <span class="label text-warning">Warning : 0</span>
+                    </div>
+                    <div class="d-flex flex-column align-items-center">
+                        <img src="assets/img/icons/security.png" height="100" />
+                        <a href="#" class="label text-success">Secured</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
