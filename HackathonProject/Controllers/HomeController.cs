@@ -12,7 +12,7 @@ namespace HackathonProject.Controllers
         public HomeController(ILogger<HomeController> logger, AdsClient ads)
         {
             _logger = logger;
-            _ads = ads; 
+            this._ads = ads; 
         }
         public IActionResult Index()
         {
