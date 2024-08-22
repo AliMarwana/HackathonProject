@@ -8,15 +8,16 @@ namespace HackathonProject.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private AdsClient ads = new AdsClient();
-        public HomeController(ILogger<HomeController> logger)
+        private AdsClient _ads;
+        public HomeController(ILogger<HomeController> logger, AdsClient ads)
         {
             _logger = logger;
+            _ads = ads; 
         }
         public IActionResult Index()
         {
-            ads.Connect(851);
-
+            _ads.Connect(851);
+            
             //if (ads.IsConnected)
             //{
             //    return Json(new { isConnected = true });
