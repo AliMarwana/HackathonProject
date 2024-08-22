@@ -30,24 +30,18 @@
 </head>
 <body>
     <!-- ======= Header ======= -->
-    <header id="header" class="fixed-to py-2">
-        <div class="container d-flex align-items-center">
+    <header id="header" class="fixed-to py-0">
+        <div class="container d-flex align-items-center my-0">
 
             <h1 class="logo mr-auto"><a asp-area="" asp-controller="Home">Group 5</a></h1>
             <nav class="nav-menu d-none d-lg-block d-flex align-items-center">
-                <ul class="d-flex align-items-center">
-                    <li class="mr-auto">
-                        <select class="get-started-btn text-black px-4 py-1 rounded-3 fs-6">
-                            <option>LAC01</option>
-                            <option>LAC02</option>
-                        </select>
-                    </li>
-                    <li><a asp-area="" asp-controller="Home">Home</a></li>
-                    <li><a href="#about" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/ic_baseline-not-started.svg" width="40" /></a></li>
-                    <li><a href="#about" class="get-started-btn circle d-flex justify-content-center active-auto"><img src="assets/img/icons/ic_outline-auto-mode.svg" width="30" /></a></li>
-                    <li><a href="#about" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/back-hand.svg" width="30" /></a></li>
-                    <li><a href="#about" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/support.svg" width="30" /></a></li>
-                    <li><a href="#about" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/start.svg" width="30" /></a></li>
+                <ul class="d-flex align-items-center justify-content-end">
+                    @* <li><a asp-area="" asp-controller="Home">Home</a></li> *@
+                    <li class="nav-li"><a href="#about" data-toggle="modal" data-target="#myModal" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/ic_baseline-not-started.svg" width="40" /></a></li>
+                    <li class="nav-li"><a href="#about" data-toggle="modal" data-target="#myModal" class="get-started-btn circle d-flex justify-content-center active-auto"><img src="assets/img/icons/ic_outline-auto-mode.svg" width="30" /></a></li>
+                    <li class="nav-li"><a href="#about" data-toggle="modal" data-target="#myModal" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/back-hand.svg" width="30" /></a></li>
+                    <li class="nav-li"><a href="#about" data-toggle="modal" data-target="#myModal" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/support.svg" width="30" /></a></li>
+                    <li class="nav-li"><a href="#about" data-toggle="modal" data-target="#myModal" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/start.svg" width="30" /></a></li>
 
                 </ul>
             </nav>
@@ -58,6 +52,27 @@
     </div>
     <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
     <div id="preloader"></div>
+    <!-- Trigger the modal with a button -->
+    
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header d-flex flex-row justify-content-between w-100">
+                    <h4 class="modal-title">Confirmation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Do you really want to perform this action ?</p>
+                </div>
+                <div class="modal-fooer d-flex justify-content-between p-3 gap-3">
+                    <button type="button" class="btn btn-danger w-50" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-success w-50" data-dismiss="modal">Yes</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <!-- Vendor JS Files -->
     <script src="~/assets/vendor/jquery/jquery.min.js"></script>
