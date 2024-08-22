@@ -6,7 +6,6 @@
     <title>@ViewData["Title"] - GaberaInternalHackathon</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/GaberaInternalHackathon.styles.css" asp-append-version="true" />
 
     <meta content="" name="description">
     <meta content="" name="keywords">
@@ -39,7 +38,7 @@
                     @* <li><a asp-area="" asp-controller="Home">Home</a></li> *@
                     <li class="nav-li" alt="Pause"><a href="#about" data-toggle="modal" data-target="#myModal" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/ic_baseline-not-started.svg" width="40" /></a></li>
                     <li class="nav-li" alt="Automatic "><a href="#about" data-toggle="modal" data-target="#myModal" class="get-started-btn circle d-flex justify-content-center active-auto"><img src="assets/img/icons/ic_outline-auto-mode.svg" width="30" /></a></li>
-                    <li class="nav-li"><a href="#about" data-toggle="modal" data-target="#myModal" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/back-hand.svg" width="30" /></a></li>
+                    <li class="nav-li"><a id="hideButton" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/back-hand.svg" width="30" /></a></li>
                     <li class="nav-li"><a href="#about" data-toggle="modal" data-target="#myModal" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/support.svg" width="30" /></a></li>
                     <li class="nav-li"><a href="#about" data-toggle="modal" data-target="#myModal" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/start.svg" width="30" /></a></li>
 
@@ -91,7 +90,18 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
+    <script>
+        document.getElementById("hideButton").onclick = function () {
+            var formulaire = document.getElementById("formulaire");
+            if (formulaire.style.display === 'none') {
+                formulaire.style.display = 'block';
+                this.style.backgroundColor = "#008F28";
+            } else {
+                formulaire.style.display = 'none';
+                this.style.backgroundColor = "transparent";
+            }
+        };
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

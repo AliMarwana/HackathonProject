@@ -293,3 +293,32 @@ footer {
     }
 }
 
+.left-container{
+    width:100%
+}
+form {
+    display:none;
+    height: 90%;
+    padding:10px 10px 20px 10px;
+    border-radius:10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.6) !important;
+    background-color: white;
+    width: 35%
+}
+
+.arc{
+    border: solid 1px ;
+    padding:5px;
+    width:50%;
+    text-align:center;
+    border-radius:5px;
+
+}
+.arc-action {
+    color:white;
+    text-align:center;
+    background-color: green;
+    padding: 5px;
+    width: 50%;
+    border-radius: 5px;
+}
