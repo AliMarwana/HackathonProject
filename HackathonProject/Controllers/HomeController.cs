@@ -23,26 +23,26 @@ namespace HackathonProject.Controllers
            
             //FB_LacManager.stLacData;
 
-            if (_ads.IsConnected)
-            {
-                var bAccept = _ads.ReadValue("LAC01.fbLacManager.stLacData.bAccept");
-                var State = _ads.ReadValue("LAC01.fbLacManager.stLacData.eOmState");
-                var Select = _ads.ReadValue("LAC01.fbLacManager.stLacData.eOmSelect");
+            //if (_ads.IsConnected)
+            //{
+            //    var bAccept = _ads.ReadValue("LAC01.fbLacManager.stLacData.bAccept");
+            //    var State = _ads.ReadValue("LAC01.fbLacManager.stLacData.eOmState");
+            //    var Select = _ads.ReadValue("LAC01.fbLacManager.stLacData.eOmSelect");
 
-                Console.WriteLine("Changement des valeurs");
+            //    Console.WriteLine("Changement des valeurs");
                 
-                _ads.WriteValue("LAC01.fbLacManager.stLacData.bAccept", true);
-                _ads.WriteValue("LAC01.fbLacManager.stLacData.eOmState",30);
-                _ads.WriteValue("LAC01.fbLacManager.stLacData.eOmSelect",20);
+            //    _ads.WriteValue("LAC01.fbLacManager.stLacData.bAccept", true);
+            //    _ads.WriteValue("LAC01.fbLacManager.stLacData.eOmState",30);
+            //    _ads.WriteValue("LAC01.fbLacManager.stLacData.eOmSelect",20);
 
-                Console.WriteLine("ReLecture des valeurs");
+            //    Console.WriteLine("ReLecture des valeurs");
 
-                var bAccept1 = _ads.ReadValue("LAC01.fbLacManager.stLacData.bAccept");
-                var State1 = _ads.ReadValue("LAC01.fbLacManager.stLacData.eOmState");
-                var Select1 = _ads.ReadValue("LAC01.fbLacManager.stLacData.eOmSelect");
+            //    var bAccept1 = _ads.ReadValue("LAC01.fbLacManager.stLacData.bAccept");
+            //    var State1 = _ads.ReadValue("LAC01.fbLacManager.stLacData.eOmState");
+            //    var Select1 = _ads.ReadValue("LAC01.fbLacManager.stLacData.eOmSelect");
 
             
-            }
+            //}
 
             return View();
         }

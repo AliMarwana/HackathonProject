@@ -35,14 +35,50 @@
             <h1 class="logo mr-auto"><a asp-area="" asp-controller="Home">Group 5</a></h1>
             <nav class="nav-menu d-none d-lg-block d-flex align-items-center">
                 <ul class="d-flex align-items-center justify-content-end">
-                    @* <li><a asp-area="" asp-controller="Home">Home</a></li> *@
-                    <li class="nav-li" alt="Pause"><a href="#about" data-toggle="modal" data-target="#myModal" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/ic_baseline-not-started.svg" width="40" /></a></li>
-                    <li class="nav-li" alt="Automatic "><a href="#about" data-toggle="modal" data-target="#myModal" class="get-started-btn circle d-flex justify-content-center active-auto"><img src="assets/img/icons/ic_outline-auto-mode.svg" width="30" /></a></li>
-                    <li class="nav-li"><a id="hideButton" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/back-hand.svg" width="30" /></a></li>
-                    <li class="nav-li"><a href="#about" data-toggle="modal" data-target="#myModal" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/support.svg" width="30" /></a></li>
-                    <li class="nav-li"><a href="#about" data-toggle="modal" data-target="#myModal" class="get-started-btn circle d-flex justify-content-center"><img src="assets/img/icons/start.svg" width="30" /></a></li>
-
+                    <li class="nav-li" alt="Pause">
+                        <a href="#about" data-toggle="modal" data-target="#myModal" data-title="Pause Action" data-message="Do you really want to pause?" class="get-started-btn circle d-flex justify-content-center">
+                            <img src="assets/img/icons/ic_baseline-not-started.svg" width="40" />
+                        </a>
+                    </li>
+                    <li class="nav-li" alt="Automatic">
+                        <a href="#about" data-toggle="modal" data-target="#myModal" data-title="Automatic Action" data-message="Do you really want to switch to automatic mode?" class="get-started-btn circle d-flex justify-content-center active-auto">
+                            <img src="assets/img/icons/ic_outline-auto-mode.svg" width="30" />
+                        </a>
+                    </li>
+                    <li class="nav-li">
+                        <a id="hideButton" href="#" data-toggle="modal" data-target="#myModal" data-title="Toggle Manual Mode" data-message="Do you really want to activate/deactivate manual mode?" class="get-started-btn circle d-flex justify-content-center">
+                            <img src="assets/img/icons/back-hand.svg" width="30" />
+                        </a>
+                    </li>
+                    <li class="nav-li">
+                        <a href="#about" data-toggle="modal" data-target="#myModal" data-title="Support Action" data-message="Do you want to contact support?" class="get-started-btn circle d-flex justify-content-center">
+                            <img src="assets/img/icons/support.svg" width="30" />
+                        </a>
+                    </li>
+                    <li class="nav-li">
+                        <a href="#about" data-toggle="modal" data-target="#myModal" data-title="Start Action" data-message="Do you want to start now?" class="get-started-btn circle d-flex justify-content-center">
+                            <img src="assets/img/icons/start.svg" width="30" />
+                        </a>
+                    </li>
                 </ul>
+
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header d-flex flex-row justify-content-between w-100">
+                                <h4 class="modal-title">Confirmation</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p id="modalMessage">Do you really want to perform this action?</p>
+                            </div>
+                            <div class="d-flex p-3 gap-3">
+                                <button type="button" class="btn btn-danger w-50" data-dismiss="modal">No</button>
+                                <button type="button" id="confirmAction" class="btn btn-success w-50" data-dismiss="modal">Yes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </nav>
         </div>
     </header>
@@ -52,26 +88,7 @@
     <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
     <div id="preloader"></div>
     <!-- Trigger the modal with a button -->
-    
-
-    <!-- Modal -->
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header d-flex flex-row justify-content-between w-100">
-                    <h4 class="modal-title">Confirmation</h4>
-                </div>
-                <div class="modal-body">
-                    <p>Do you really want to perform this action ?</p>
-                </div>
-                <div class="modal-fooer d-flex justify-content-between p-3 gap-3">
-                    <button type="button" class="btn btn-danger w-50" data-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-success w-50" data-dismiss="modal">Yes</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
+  
 
     <!-- Vendor JS Files -->
     <script src="~/assets/vendor/jquery/jquery.min.js"></script>
@@ -90,7 +107,10 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script>
+    @* <script>
+        confirmButton.addEventListener('click', function () {
+            if (confirmButton != null) {
+            
         document.getElementById("hideButton").onclick = function () {
             var formulaire = document.getElementById("formulaire");
             if (formulaire.style.display === 'none') {
@@ -101,7 +121,51 @@
                 this.style.backgroundColor = "transparent";
             }
         };
+                confirmButton = null;
+            }
+        });
+    </script> *@
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var modal = document.getElementById('myModal');
+            var confirmButton = document.getElementById('confirmAction');
+            var modalTitle = modal.querySelector('.modal-title');
+            var modalMessage = document.getElementById('modalMessage');
+
+            document.querySelectorAll('[data-toggle="modal"]').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    var title = this.getAttribute('data-title');
+                    var message = this.getAttribute('data-message');
+
+                    modalTitle.textContent = title || 'Confirmation';
+                    modalMessage.textContent = message || 'Do you really want to perform this action?';
+
+                });
+            });
+            confirmButton.addEventListener('click', function () {
+                if (modalTitle.textContent === "Toggle Manual Mode") {
+                    var hideButton = document.getElementById('hideButton');
+                    var formulaire = document.getElementById("formulaire");
+                    if (formulaire.style.display === 'none') {
+                        formulaire.style.display = 'block';
+                        hideButton.style.backgroundColor = "#008F28";
+                    } else if (formulaire.style.display === 'block') {
+                        formulaire.style.display = 'none';
+                        hideButton.style.backgroundColor = "transparent";
+                    }
+                    else {
+                        formulaire.style.display = 'block';
+                        hideButton.style.backgroundColor = "#008F28";
+                    }
+                }
+                else {
+                    console.log(this.textContent);
+                    this.style.backgroundColor = "#008F28";
+                }
+            });
+        });
     </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
