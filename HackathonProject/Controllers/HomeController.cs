@@ -28,7 +28,7 @@ namespace HackathonProject.Controllers
             }
             catch (Exception ex)
             {
-                return Ok("You are not connected");
+                return View("../Shared/Error", "There is an unexpected error");
             };
         }
         public IActionResult Privacy()

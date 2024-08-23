@@ -25,6 +25,10 @@ namespace HackathonProject.Controllers
             LacInfo lacInfo = _lacService.GetSpecificLacInfo(lacName);
             return View();
         }
+        public IActionResult SetAction()
+        {
+            return Ok();
+        }
        
     }
 }
