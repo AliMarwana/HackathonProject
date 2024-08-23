@@ -20,17 +20,20 @@ namespace HackathonProject.NewFolder
         
         public T ReadVar<T>(string nameVar)
         {
-         var GVariable = _adsClient.CreateVariableHandle(nameVar);
+            _adsClient.Connect(AmsNetId.Local, 851);
+            var GVariable = _adsClient.CreateVariableHandle(nameVar);
          var realVariable = (T)_adsClient.ReadAny(GVariable, typeof(T));
          return realVariable;
         }
         public void WriteVar<T>(string nameVar, T variableToInsert)
         {
-          var GVariable = _adsClient.CreateVariableHandle(nameVar);
+            _adsClient.Connect(AmsNetId.Local, 851);
+            var GVariable = _adsClient.CreateVariableHandle(nameVar);
             _adsClient.WriteAny(GVariable, variableToInsert);
         } 
         public GlobalVars GetGlobal()
         {
+            _adsClient.Connect(AmsNetId.Local, 851);
             bool controlVoltageOff = ReadVar<bool>("GIO.IbIP02_ControlVoltageOff_NC");
             bool controlVoltageOn = ReadVar<bool>("GIO.IbIP02_ControlVoltageOn");
             GlobalVars globalVars = new GlobalVars();

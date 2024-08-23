@@ -26,7 +26,7 @@ namespace HackathonProject.Controllers
 
                 return View();
             }
-            catch (TwinCAT.ClientNotConnectedException ex)
+            catch (Exception ex)
             {
                 return Ok("You are not connected");
             };
