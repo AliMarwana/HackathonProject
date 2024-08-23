@@ -217,7 +217,7 @@ footer {
 }
 
 .sidebar .active-menu, .active-menu path  {
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1) !important; 
     background-color: #37517E !important;
     fill:white
 }
