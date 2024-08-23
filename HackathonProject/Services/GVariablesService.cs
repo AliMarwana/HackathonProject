@@ -145,6 +145,9 @@ namespace HackathonProject.NewFolder
             globalVars.moteur_4 = ReadVar<bool>("GIO.Ob0204_RC_EnableController");
             globalVars.capter_4 = ReadVar<bool>("GIO.Ib0204_RC_Stop");
 
+            globalVars.Lac1VoltageOn = ReadVar<bool>("LAC01.fbLacManager.RefLacData.bControlVoltageOn");
+
+
             return globalVars;
         }
         public bool IsVoltageOn()

@@ -13,6 +13,8 @@
         public bool IsLac01On { get; set; }
         public bool IsLac02On { get; set; }
 
+        public bool Lac1VoltageOn { get; set; }
+
         public bool Controller_1 { get; set; }
         public bool moteur_1 { get; set; }
         public bool capter_1 { get; set; }
