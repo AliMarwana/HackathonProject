@@ -11,13 +11,27 @@ document.querySelectorAll('.youss-click').forEach((val) => {
                 document.querySelector('.youss-img').classList.add('d-none');
             } else {
                 let state = val.getAttribute('data-youss-on');
-                replaceimgtrue(state);
+                let controler = val.querySelector('.youss-controler').getAttribute('data-youss-controler');
+                let moteur = val.querySelector('.youss-moteur').getAttribute('data-youss-moteur');
+                let capteur = val.querySelector('.youss-capteur').getAttribute('data-youss-capteur');
+                if (controler == moteur && moteur == capteur) {
+                    replaceimgtrue('on');
+                } else {
+                    replaceimgtrue('off');
+                }
                 replaceimg(num);
             }
         } else {
             let num = val.getAttribute('data-youss-arc');
             let state = val.getAttribute('data-youss-on');
-            replaceimgtrue(state);
+            let controler = val.querySelector('.youss-controler').getAttribute('data-youss-controler');
+            let moteur = val.querySelector('.youss-moteur').getAttribute('data-youss-moteur');
+            let capteur = val.querySelector('.youss-capteur').getAttribute('data-youss-capteur');
+            if (controler == moteur && moteur == capteur) {
+                replaceimgtrue('on');
+            } else {
+                replaceimgtrue('off');
+            }
             post = num;
             replaceimg(num);
             document.querySelector('.youss-img').classList.remove('d-none');
@@ -67,3 +81,33 @@ let replaceimgtrue = (state) => {
             break;
     }
 }
+document.querySelectorAll('.youss-controler').forEach((val) => {
+    switch (val.getAttribute('data-youss-controler')) {
+        case 'True':
+            val.style.backgroundColor = "#28a745";
+            break;
+        case 'False':
+            val.style.backgroundColor = "#dc3545";
+            break;
+    }
+});
+document.querySelectorAll('.youss-moteur').forEach((val) => {
+    switch (val.getAttribute('data-youss-moteur')) {
+        case 'True':
+            val.style.backgroundColor = "#28a745";
+            break;
+        case 'False':
+            val.style.backgroundColor = "#dc3545";
+            break;
+    }
+});
+document.querySelectorAll('.youss-capteur').forEach((val) => {
+    switch (val.getAttribute('data-youss-capteur')) {
+        case 'True':
+            val.style.backgroundColor = "#28a745";
+            break;
+        case 'False':
+            val.style.backgroundColor = "#dc3545";
+            break;
+    }
+});
