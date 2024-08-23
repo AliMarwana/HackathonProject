@@ -24,6 +24,9 @@ namespace HackathonProject.Controllers
                    
                 }*/
 
+                //var bForword = _ads.ReadValue("st01EL.fbMan.Button.bForward");
+                //var bForword1 = _ads.ReadValue("st01EL.fbMan.Button.bForward");
+
                 return View();
             }
             catch (Exception ex)

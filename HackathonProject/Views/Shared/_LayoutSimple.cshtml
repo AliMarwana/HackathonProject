@@ -177,24 +177,40 @@
             var hideButton = document.getElementById('hideButton');
             var setup = document.getElementById('setup');
             var off = document.getElementById('off');
-            var lacModeChosen = "";
-            if ('@ViewData["lacMode"]' == '@DefaultConfig.Manual') {
-                var hideButton = document.getElementById('hideButton');
-                var formulaire = document.getElementById("formulaire");
-                if (formulaire.style.display === 'none') {
-                    formulaire.style.display = 'block';
-                    //                  hideButton.style.backgroundColor = "#008F28";
-                } else if (formulaire.style.display === 'block') {
-                    formulaire.style.display = 'none';
-                    //   hideButton.style.backgroundColor = "transparent";
-                }
-                else {
-                    formulaire.style.display = 'block';
-                    //             hideButton.style.backgroundColor = "#008F28";
-                }
-            }
+         
             document.querySelectorAll('[data-toggle="modal"]').forEach(function (button) {
                 button.addEventListener('click', function () {
+                    var title = this.getAttribute('data-title');
+                    var message = this.getAttribute('data-message');
+
+                    modalTitle.textContent = title || 'Confirmation';
+                    modalMessage.textContent = message || 'Do you really want to perform this action?';
+
+                });
+            });
+            confirmButton.addEventListener('click', function () {
+
+                if (modalTitle.textContent === "Toggle Manual Mode") {
+                    var hideButton = document.getElementById('hideButton');
+                    var formulaire = document.getElementById("formulaire");
+                    if (formulaire.style.display === 'none') {
+                        formulaire.style.display = 'block';
+                         document.querySelector(".left-container").classList.remove('col-12');
+                         document.querySelector(".left-container").classList.add('col-9');
+      //                  hideButton.style.backgroundColor = "#008F28";
+                    } else if (formulaire.style.display === 'block') {
+                        document.querySelector(".left-container").classList.add('col-12');
+                        document.querySelector(".left-container").classList.remove('col-9');  
+                        formulaire.style.display = 'none';
+                    //   hideButton.style.backgroundColor = "transparent";
+                    }
+                    else {
+                        formulaire.style.display = 'block';
+                        document.querySelector(".left-container").classList.remove('col-12');
+                        document.querySelector(".left-container").classList.add('col-9');
+           //             hideButton.style.backgroundColor = "#008F28";
+                    }
+                }
 
                     var title = this.getAttribute('data-title');
                     var message = this.getAttribute('data-message');
