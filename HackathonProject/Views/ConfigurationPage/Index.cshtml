@@ -1,12 +1,13 @@
-﻿@model LacInfo
+﻿@using HackathonProject.ViewModel
+@model ConfigurationViewModel
 @{
-    ViewData["lacMode"] = Model.LacMode.Description;
-    ViewData["lacName"] = Model.DisplayName;
+    ViewData["lacMode"] = Model.LacInfo.LacMode.Description;
+    ViewData["lacName"] = Model.LacInfo.DisplayName;
     Layout = "_LayoutSimple";
 
    
 }
-<div class="configuration position-fixed">
+<div class="configuration position-fixed" data-youss-test="@Model.GlobalVars.IsAutomaticMode">
     <nav class="sidebar">
         <ul>
             <a asp-controller="Dashboard">

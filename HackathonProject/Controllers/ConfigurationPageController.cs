@@ -2,6 +2,7 @@
 using HackathonProject.Models;
 using HackathonProject.NewFolder;
 using HackathonProject.Services;
+using HackathonProject.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 using TwinCAT.Ads;
 
@@ -24,7 +25,11 @@ namespace HackathonProject.Controllers
         {
             _adsClient.Connect(AmsNetId.Local, 851);
             LacInfo lacInfo = _lacService.GetSpecificLacInfo(lacName);
-            return View(lacInfo);
+            GlobalVars globalVars = _variablesService.GetGlobal();
+            ConfigurationViewModel viewModel = new ConfigurationViewModel();
+            viewModel.GlobalVars = globalVars;
+            viewModel.LacInfo = lacInfo;
+            return View(viewModel);
         }
         [HttpGet]
         public async Task<IActionResult> SetAction(string mode, string lacName)

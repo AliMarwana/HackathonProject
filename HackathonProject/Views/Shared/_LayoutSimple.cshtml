@@ -74,13 +74,13 @@
                     <li class="nav-li">
                         @if (@ViewData["lacMode"] == @DefaultConfig.Setup)
                         {
-                            <a style="background-color:#008F28;" id="setup" data-toggle="modal" data-target="#myModal" lac-mode="@DefaultConfig.Setup" data-title="Support Action" data-message="Do you want to contact support?" class="get-started-btn circle d-flex justify-content-center">
+                            <a style="background-color:#008F28;" id="setup" data-toggle="modal" data-target="#myModal" lac-mode="@DefaultConfig.Setup" data-title="Support Action" data-message="Do you want to activate/deactive the setup mode?" class="get-started-btn circle d-flex justify-content-center">
                                 <img src="assets/img/icons/support.svg" width="30" />
                             </a>
                         }
                         else
                         {
-                            <a id="setup"  data-toggle="modal" data-target="#myModal" data-title="Support Action" data-message="Do you want to contact support?" lac-mode="@DefaultConfig.Setup" class="get-started-btn circle d-flex justify-content-center">
+                            <a id="setup" data-toggle="modal" data-target="#myModal" data-title="Support Action" data-message="Do you want to activate/deactive the setup mode?" lac-mode="@DefaultConfig.Setup" class="get-started-btn circle d-flex justify-content-center">
                                 <img src="assets/img/icons/support.svg" width="30" />
                             </a>
                         }
@@ -88,13 +88,13 @@
                     <li class="nav-li">
                         @if (@ViewData["lacMode"] == @DefaultConfig.Off)
                         {
-                            <a style="background-color:#008F28;" id="off"  data-toggle="modal" data-target="#myModal" lac-mode="@DefaultConfig.Off" data-title="Start Action" data-message="Do you want to start now?" class="get-started-btn circle d-flex justify-content-center">
+                            <a style="background-color:#008F28;" id="off"  data-toggle="modal" data-target="#myModal" lac-mode="@DefaultConfig.Off" data-title="Start Action" data-message="Do you want to Do you want to activate/deactive the off mode?" class="get-started-btn circle d-flex justify-content-center">
                                 <img src="assets/img/icons/start.svg" width="30" />
                             </a>
                         }
                         else
                         {
-                            <a id="off"  data-toggle="modal" data-target="#myModal" data-title="Start Action" data-message="Do you want to start now?" lac-mode="@DefaultConfig.Off" class="get-started-btn circle d-flex justify-content-center">
+                            <a id="off" data-toggle="modal" data-target="#myModal" data-title="Start Action" data-message="Do you want to activate/deactive the off mode?" lac-mode="@DefaultConfig.Off" class="get-started-btn circle d-flex justify-content-center">
                                 <img src="assets/img/icons/start.svg" width="30" />
                             </a>
                         }
