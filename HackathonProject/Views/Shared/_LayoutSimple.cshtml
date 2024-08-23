@@ -195,126 +195,127 @@
                     var formulaire = document.getElementById("formulaire");
                     if (formulaire.style.display === 'none') {
                         formulaire.style.display = 'block';
-                         document.querySelector(".left-container").classList.remove('col-12');
-                         document.querySelector(".left-container").classList.add('col-9');
-      //                  hideButton.style.backgroundColor = "#008F28";
+                        document.querySelector(".left-container").classList.remove('col-12');
+                        document.querySelector(".left-container").classList.add('col-9');
+                        //                  hideButton.style.backgroundColor = "#008F28";
                     } else if (formulaire.style.display === 'block') {
                         document.querySelector(".left-container").classList.add('col-12');
-                        document.querySelector(".left-container").classList.remove('col-9');  
+                        document.querySelector(".left-container").classList.remove('col-9');
                         formulaire.style.display = 'none';
-                    //   hideButton.style.backgroundColor = "transparent";
+                        //   hideButton.style.backgroundColor = "transparent";
                     }
                     else {
                         formulaire.style.display = 'block';
                         document.querySelector(".left-container").classList.remove('col-12');
                         document.querySelector(".left-container").classList.add('col-9');
-           //             hideButton.style.backgroundColor = "#008F28";
+                        //             hideButton.style.backgroundColor = "#008F28";
                     }
                 }
+                document.querySelectorAll('[data-toggle="modal"]').forEach(function (button) {
+                    button.addEventListener('click', function () {
+                        var title = this.getAttribute('data-title');
+                        var message = this.getAttribute('data-message');
 
-                    var title = this.getAttribute('data-title');
-                    var message = this.getAttribute('data-message');
+                        lacModeChosen = this.getAttribute('lac-mode');
 
-                    lacModeChosen = this.getAttribute('lac-mode');
-
-                    modalTitle.textContent = title || 'Confirmation';
-                    modalMessage.textContent = message || 'Do you really want to perform this action?';
-
+                        modalTitle.textContent = title || 'Confirmation';
+                        modalMessage.textContent = message || 'Do you really want to perform this action?';
+                    });
                 });
-            });
-     
-            confirmButton.addEventListener('click',
-                function () {
-                    $.ajax({
-                        url: '/ConfigurationPage/SetAction',
 
-                        //     data: { idIdea: ideaId, idUser: userId, pg: currentPage, pageSize: pgeSize },
-                        data: { mode: lacModeChosen, lacName: '@ViewData["lacName"]'},
-                        type: "Get",
-                        success: function (result) {
+                confirmButton.addEventListener('click',
+                    function () {
+                        $.ajax({
+                            url: '/ConfigurationPage/SetAction',
 
-                            $(document).ajaxStop(function () {
-                                window.location.reload();
-                            });
+                            //     data: { idIdea: ideaId, idUser: userId, pg: currentPage, pageSize: pgeSize },
+                            data: { mode: lacModeChosen, lacName: '@ViewData["lacName"]' },
+                            type: "Get",
+                            success: function (result) {
 
-                        },
-                        error: function (jqXHR, textStatus, errorThrown) {
-                            console.log("Custom error : " + jqXHR.responseText + " Status: " + textStatus + " Http error:" + errorThrown);
+                                $(document).ajaxStop(function () {
+                                    window.location.reload();
+                                });
 
-                        }
+                            },
+                            error: function (jqXHR, textStatus, errorThrown) {
+                                console.log("Custom error : " + jqXHR.responseText + " Status: " + textStatus + " Http error:" + errorThrown);
 
+                            }
+
+
+                        });
+
+                        // if (modalTitle.textContent === "Toggle Manual Mode") {
+                        //     var hideButton = document.getElementById('hideButton');
+                        //     var formulaire = document.getElementById("formulaire");
+                        //     if (formulaire.style.display === 'none') {
+                        //         formulaire.style.display = 'block';
+                        //         //                  hideButton.style.backgroundColor = "#008F28";
+                        //     } else if (formulaire.style.display === 'block') {
+                        //         formulaire.style.display = 'none';
+                        //         //   hideButton.style.backgroundColor = "transparent";
+                        //     }
+                        //     else {
+                        //         formulaire.style.display = 'block';
+                        //         //             hideButton.style.backgroundColor = "#008F28";
+                        //     }
+
+                        // }
+
+
+
+
+
+
+                        // else if (modalTitle.textContent === "Support Action") {
+                        //     var hideButton = document.getElementById('support');
+                        //     console.log(hideButton.style.backgroundColor);
+                        //     if (hideButton.style.backgroundColor === "rgb(0, 143, 40)") {
+                        //         hideButton.style.backgroundColor = "transparent";
+                        //     }
+                        //     else if (hideButton.style.backgroundColor === "transparent") {
+                        //         hideButton.style.backgroundColor = "#008F28";
+                        //     }
+                        //     else if(hideButton.style.backgroundColor === ""){
+                        //         hideButton.style.backgroundColor = "#008F28";
+
+                        //     }
+                        // }
+                        // else if (modalTitle.textContent === "Start Action") {
+                        //     var hideButton = document.getElementById('start');
+                        //     if (hideButton.style.background === "rgb(0, 143, 40)") {
+                        //         hideButton.style.backgroundColor = "transparent";
+                        //     }
+                        //     else if (hideButton.style.backgroundColor === "transparent") {
+                        //         hideButton.style.backgroundColor = "#008F28";
+                        //     }
+                        //     else if (hideButton.style.backgroundColor === "") {
+                        //         hideButton.style.backgroundColor = "#008F28";
+
+                        //     }
+                        // }
+                        // else if (modalTitle.textContent === "Automatic Action") {
+                        //     var hideButton = document.getElementById('automatic');
+                        //     if (hideButton.style.background === "rgb(0, 143, 40)") {
+                        //         hideButton.style.backgroundColor = "transparent";
+                        //     }
+                        //     else if (hideButton.style.backgroundColor === "transparent") {
+                        //         hideButton.style.backgroundColor = "#008F28";
+                        //     }
+                        //     else if (hideButton.style.backgroundColor === "") {
+                        //         hideButton.style.backgroundColor = "#008F28";
+
+                        //     }
+                        // }
+
+                        // else {
+                        //     console.log(this.textContent);
+                        //     this.style.backgroundColor = "#008F28";
+                        // }
 
                     });
-                    
-                    // if (modalTitle.textContent === "Toggle Manual Mode") {
-                    //     var hideButton = document.getElementById('hideButton');
-                    //     var formulaire = document.getElementById("formulaire");
-                    //     if (formulaire.style.display === 'none') {
-                    //         formulaire.style.display = 'block';
-                    //         //                  hideButton.style.backgroundColor = "#008F28";
-                    //     } else if (formulaire.style.display === 'block') {
-                    //         formulaire.style.display = 'none';
-                    //         //   hideButton.style.backgroundColor = "transparent";
-                    //     }
-                    //     else {
-                    //         formulaire.style.display = 'block';
-                    //         //             hideButton.style.backgroundColor = "#008F28";
-                    //     }
-                        
-                    // }
-
-
-
-
-
-
-                    // else if (modalTitle.textContent === "Support Action") {
-                    //     var hideButton = document.getElementById('support');
-                    //     console.log(hideButton.style.backgroundColor);
-                    //     if (hideButton.style.backgroundColor === "rgb(0, 143, 40)") {
-                    //         hideButton.style.backgroundColor = "transparent";
-                    //     }
-                    //     else if (hideButton.style.backgroundColor === "transparent") {
-                    //         hideButton.style.backgroundColor = "#008F28";
-                    //     }
-                    //     else if(hideButton.style.backgroundColor === ""){
-                    //         hideButton.style.backgroundColor = "#008F28";
-
-                    //     }
-                    // }
-                    // else if (modalTitle.textContent === "Start Action") {
-                    //     var hideButton = document.getElementById('start');
-                    //     if (hideButton.style.background === "rgb(0, 143, 40)") {
-                    //         hideButton.style.backgroundColor = "transparent";
-                    //     }
-                    //     else if (hideButton.style.backgroundColor === "transparent") {
-                    //         hideButton.style.backgroundColor = "#008F28";
-                    //     }
-                    //     else if (hideButton.style.backgroundColor === "") {
-                    //         hideButton.style.backgroundColor = "#008F28";
-
-                    //     }
-                    // }
-                    // else if (modalTitle.textContent === "Automatic Action") {
-                    //     var hideButton = document.getElementById('automatic');
-                    //     if (hideButton.style.background === "rgb(0, 143, 40)") {
-                    //         hideButton.style.backgroundColor = "transparent";
-                    //     }
-                    //     else if (hideButton.style.backgroundColor === "transparent") {
-                    //         hideButton.style.backgroundColor = "#008F28";
-                    //     }
-                    //     else if (hideButton.style.backgroundColor === "") {
-                    //         hideButton.style.backgroundColor = "#008F28";
-
-                    //     }
-                    // }
-
-                    // else {
-                    //     console.log(this.textContent);
-                    //     this.style.backgroundColor = "#008F28";
-                    // }
-
-                });
+            });
         });
     </script>
 
