@@ -45,8 +45,6 @@ body {
     color: white;
     padding: 5px;
     height: 100%;
-    position:fixed;
-    left:0
 }
 
     .sidebar ul {
@@ -54,7 +52,7 @@ body {
         padding: 0;
     }
 
-        .sidebar ul li, .start-button {
+        .sidebar ul li, .sidebar button, .start-button {
             margin: 10px 0;
             cursor: pointer;
             background-color: #fff !important;
@@ -321,4 +319,33 @@ form {
     padding: 5px;
     width: 50%;
     border-radius: 5px;
+}
+
+.form-group input, .form-group select {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    padding-left:3px
+}
+    .form-group input::placeholder, .form-group select::placeholder {
+        color: #fff;
+        opacity: 1;
+    }
+    .form-group input:focus, .form-group select:focus {
+        background-color: transparent;
+        color:white
+    }
+select option[value=""] {
+    color: #fff; /* Couleur du texte du placeholder */
+}
+.witron {
+    text-align:center;
+    font-size: 30px !important;
+    color: white;
+    padding: 0;
+    line-height: 1 !important;
+    font-weight: 500 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
 }
