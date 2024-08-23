@@ -38,8 +38,11 @@ namespace HackathonProject.NewFolder
             globalVars.ControlVoltageOn = controlVoltageOn;
 
             return globalVars;
-           
-          
+        }
+        public bool IsVoltageOn()
+        {
+            bool controlVoltageOn = ReadVar<bool>("GIO.IbIP02_ControlVoltageOn");
+            return controlVoltageOn;
         }
      
     }

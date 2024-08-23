@@ -4,8 +4,8 @@ namespace HackathonProject.DefaultConfiguration
 {
     public static class DefaultConfig
     {
-        public static string Lac01 { get; set; } = "Lac01";
-        public static string Lac02 { get; set; } = "Lac02";
+        public static string Lac01 { get; set; } = "LAC001";
+        public static string Lac02 { get; set; } = "LAC002";
         public static List<LacMode> LacModes()
         {
             List<LacMode> lacModes = new List<LacMode>();
@@ -21,6 +21,17 @@ namespace HackathonProject.DefaultConfiguration
             lacStatuses.Add(new LacStatus { Description = "Standby" });
             return lacStatuses;
         }
-
+        public static List<LacInfo> LacInfos()
+        {
+            List<LacInfo> lacInfos = new List<LacInfo>();
+            lacInfos.Add(new LacInfo { DisplayName = Lac01 });
+            lacInfos.Add(new LacInfo { DisplayName = Lac02 });
+            return lacInfos;
+        }
+        public static Machine GetMachine()
+        {
+            Machine machine = new Machine();
+            return machine;
+        }
     }
 }
