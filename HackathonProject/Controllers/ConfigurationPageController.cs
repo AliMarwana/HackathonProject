@@ -19,16 +19,12 @@ namespace HackathonProject.Controllers
             _lacService = lacService;
             _adsClient = adsClient;
         }
-        public IActionResult Index()
-        {
-            
-            return View();
-        }
-        public IActionResult Details(string lacName)
+        public IActionResult Index(string lacName)
         {
             _adsClient.Connect(AmsNetId.Local, 851);
             LacInfo lacInfo = _lacService.GetSpecificLacInfo(lacName);
-            return View( "../ConfigurationPage/Index",lacInfo);
+            return View();
         }
+       
     }
 }
