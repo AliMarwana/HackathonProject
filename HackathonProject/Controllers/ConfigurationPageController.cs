@@ -1,4 +1,5 @@
-﻿using HackathonProject.Models;
+﻿using HackathonProject.DefaultConfiguration;
+using HackathonProject.Models;
 using HackathonProject.NewFolder;
 using HackathonProject.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -25,9 +26,21 @@ namespace HackathonProject.Controllers
             LacInfo lacInfo = _lacService.GetSpecificLacInfo(lacName);
             return View(lacInfo);
         }
-        public IActionResult SetAction()
+        [HttpGet]
+        public async Task<IActionResult> SetAction(string mode, string lacName)
         {
+            LacInfo lacInfo = _lacService.GetSpecificLacInfo(lacName);
+            if(lacName == DefaultConfig.Lac01)
+            {
+                await _lacService.SetModeLac1(mode);
+            }
+            else
+            {
+                await _lacService.SetModeLac2(mode);
+            }
             return Ok();
+
+        //    return RedirectToAction("Index", "Configuration", new {lacName = lacName});
         }
        
     }

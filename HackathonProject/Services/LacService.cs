@@ -25,20 +25,46 @@ namespace HackathonProject.Services
             var State = _ads.ReadValue<int>("LAC02.fbLacManager.stLacData.eOmState");
             return DefaultConfig.LacModes().Where(p => p.Value == State).FirstOrDefault();
         }
-            public void SetModeLac1(int State)
+            public async Task SetModeLac1(string mode)
             {
             _ads.Connect(AmsNetId.Local, 851);
             List<LacMode> modes = new List<LacMode>();
-            _ads.WriteValue("LAC01.fbLacManager.stLacData.eOmState", State);
-            _ads.WriteValue("LAC01.fbLacManager.stLacData.eOmSelect", State);
+            LacMode lacMode = DefaultConfig.LacModes().Where(p => p.Description == mode).FirstOrDefault();
+            await _ads.WriteValueAsync("LAC01.fbLacManager.stLacData.eOmSelect", lacMode.Value, new CancellationToken());
+            await Task.Delay(2);
+             await   _ads.WriteValueAsync("LAC01.fbLacManager.stLacData.eOmState", lacMode.Value, new CancellationToken());
+            await Task.Delay(2);
+            await _ads.WriteValueAsync("LAC01.fbLacManager.stLacData.bAccept", true, new CancellationToken());
+            await _ads.WriteValueAsync("LAC01.fbLacManager.stLacData.eOmSelect", lacMode.Value, new CancellationToken());
+            await Task.Delay(2);
+            await _ads.WriteValueAsync("LAC01.fbLacManager.stLacData.eOmState", lacMode.Value, new CancellationToken());
+            await Task.Delay(2);
+            await _ads.WriteValueAsync("LAC01.fbLacManager.stLacData.bAccept", true, new CancellationToken());
+            /*_ads.WriteValue("LAC01.fbLacManager.stLacData.eOmSelect", lacMode.Value);
+            await Task.Delay(2);
+     //       _ads.WriteValue("LAC01.fbLacManager.stLacData.eOmState", lacMode.Value);
+            await Task.Delay(2);
             _ads.WriteValue("LAC01.fbLacManager.stLacData.bAccept", true);
+            // Delay for 2 milliseconds
+            await Task.Delay(2);
+            _ads.WriteValue("LAC01.fbLacManager.stLacData.bAccept", false);
+            _ads.WriteValue("LAC02.fbLacManager.stLacData.bAccept", true);
+            _ads.WriteValue("LAC02.fbLacManager.stLacData.bAccept", true);*/
         }
-            public void SetModeLac2(int State)
+            public async Task SetModeLac2(string mode)
         {
             _ads.Connect(AmsNetId.Local, 851);
             List<LacMode> modes = new List<LacMode>();
-            _ads.WriteValue("LAC02.fbLacManager.stLacData.eOmState", State);
-            _ads.WriteValue("LAC02.fbLacManager.stLacData.eOmSelect", State);
+            LacMode lacMode = DefaultConfig.LacModes().Where(p => p.Description == mode).FirstOrDefault();
+            _ads.WriteValue("LAC02.fbLacManager.stLacData.eOmSelect", lacMode.Value);
+            await Task.Delay(2);
+    //        _ads.WriteValue("LAC02.fbLacManager.stLacData.eOmState", lacMode.Value);
+            await Task.Delay(2);
+            _ads.WriteValue("LAC02.fbLacManager.stLacData.bAccept", true);
+            // Delay for 2 milliseconds
+            await Task.Delay(2);
+            _ads.WriteValue("LAC02.fbLacManager.stLacData.bAccept", false);
+            _ads.WriteValue("LAC02.fbLacManager.stLacData.bAccept", true);
             _ads.WriteValue("LAC02.fbLacManager.stLacData.bAccept", true);
         }
         public List<LacInfo> GetLacInfos()

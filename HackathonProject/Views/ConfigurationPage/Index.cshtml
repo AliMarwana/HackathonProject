@@ -1,6 +1,7 @@
 ﻿@model LacInfo
 @{
-    // ViewData["lacMode"] = Model.LacMode.Description;
+    ViewData["lacMode"] = Model.LacMode.Description;
+    ViewData["lacName"] = Model.DisplayName;
     Layout = "_LayoutSimple";
 
    
@@ -47,7 +48,7 @@
     <main>
         <div class="d-flex flex-row h-100 ms-5">
             <div class="left-container"></div>
-            <form id="formulaire">
+            <form id="formulaire" class="form">
                 <h4 class="text-center">Manual actions</h4>
                 <div class="d-flex flex-row gap-1 mt-3"    >
                     <div class="arc">
