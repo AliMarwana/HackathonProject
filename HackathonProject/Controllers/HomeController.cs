@@ -28,7 +28,7 @@ namespace HackathonProject.Controllers
             }
             catch (Exception ex)
             {
-                return View("../Shared/Error", "There is an unexpected error");
+                return RedirectToAction("Index", "Error", new {message = ex.Message});
             };
         }
         public IActionResult Privacy()
@@ -36,10 +36,10 @@ namespace HackathonProject.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        /*[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        }*/
     }
 }

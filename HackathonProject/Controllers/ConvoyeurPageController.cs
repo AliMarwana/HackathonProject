@@ -35,8 +35,8 @@ namespace HackathonProject.Controllers
             }
             catch (Exception ex)
             {
-                return View("../Shared/Error","There is an unexpected error");
-            }
+                return RedirectToAction("Index", "Error", new { message = ex.Message });
+            };
         }
     }
 }
