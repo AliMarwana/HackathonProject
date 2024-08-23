@@ -23,7 +23,11 @@ namespace HackathonProject.Controllers
         {
             _adsClient.Connect(AmsNetId.Local, 851);
             LacInfo lacInfo = _lacService.GetSpecificLacInfo(lacName);
-            return View();
+            return View(lacInfo);
+        }
+        public IActionResult SetAction()
+        {
+            return Ok();
         }
        
     }

@@ -35,8 +35,8 @@ namespace HackathonProject.Controllers
             }
             catch (Exception ex)
             {
-                return View("../Shared/Error",new ErrorViewModel { RequestId = ex.Message });
-            }
+                return RedirectToAction("Index", "Error", new { message = ex.Message });
+            };
         }
     }
 }

@@ -1,6 +1,9 @@
 ﻿@model LacInfo
 @{
+    ViewData["lacMode"] = Model.LacMode.Description;
     Layout = "_LayoutSimple";
+
+   
 }
 <div class="configuration position-fixed">
     <nav class="sidebar">

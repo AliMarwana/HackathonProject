@@ -6,6 +6,10 @@ namespace HackathonProject.DefaultConfiguration
     {
         public static string Lac01 { get; set; } = "LAC001";
         public static string Lac02 { get; set; } = "LAC002";
+        public static string Automatic { get; set; } = "Automatic";
+        public static string Manual { get; set; } = "Manual";
+        public static string Off { get; set; } = "Off";
+        public static string Setup { get; set; } = "Setup";
         public static List<LacMode> LacModes()
         {
             List<LacMode> lacModes = new List<LacMode>();
