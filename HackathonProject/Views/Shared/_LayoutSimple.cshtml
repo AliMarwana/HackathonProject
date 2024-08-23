@@ -35,31 +35,13 @@
             <h1 class="logo mr-auto"><a asp-area="" asp-controller="Home">Group 5</a></h1>
             <nav class="nav-menu d-none d-lg-block d-flex align-items-center">
                 <ul class="d-flex align-items-center justify-content-end">
-                    <li class="nav-li" alt="Pause">
-                        <a href="#about" data-toggle="modal" data-target="#myModal" data-title="Pause Action" data-message="Do you really want to pause?" class="get-started-btn circle d-flex justify-content-center">
-                            <img src="assets/img/icons/ic_baseline-not-started.svg" width="40" />
-                        </a>
-                    </li>
-                    <li class="nav-li" alt="Automatic">
-                        <a href="#about" data-toggle="modal" data-target="#myModal" data-title="Automatic Action" data-message="Do you really want to switch to automatic mode?" class="get-started-btn circle d-flex justify-content-center active-auto">
-                            <img src="assets/img/icons/ic_outline-auto-mode.svg" width="30" />
-                        </a>
-                    </li>
-                    <li class="nav-li">
-                        <a id="hideButton" href="#" data-toggle="modal" data-target="#myModal" data-title="Toggle Manual Mode" data-message="Do you really want to activate/deactivate manual mode?" class="get-started-btn circle d-flex justify-content-center">
-                            <img src="assets/img/icons/back-hand.svg" width="30" />
-                        </a>
-                    </li>
-                    <li class="nav-li">
-                        <a href="#about" data-toggle="modal" data-target="#myModal" data-title="Support Action" data-message="Do you want to contact support?" class="get-started-btn circle d-flex justify-content-center">
-                            <img src="assets/img/icons/support.svg" width="30" />
-                        </a>
-                    </li>
-                    <li class="nav-li">
-                        <a href="#about" data-toggle="modal" data-target="#myModal" data-title="Start Action" data-message="Do you want to start now?" class="get-started-btn circle d-flex justify-content-center">
-                            <img src="assets/img/icons/start.svg" width="30" />
-                        </a>
-                    </li>
+                    @* <li><a asp-area="" asp-controller="Home">Home</a></li> *@
+                    <li class="nav-li" alt="Pause"><a href="#about" data-toggle="modal" data-target="#myModal" class="get-started-btn circle d-flex justify-content-center"><img src="/assets/img/icons/ic_baseline-not-started.svg" width="40" /></a></li>
+                    <li class="nav-li" alt="Automatic "><a href="#about" data-toggle="modal" data-target="#myModal" class="get-started-btn circle d-flex justify-content-center active-auto"><img src="/assets/img/icons/ic_outline-auto-mode.svg" width="30" /></a></li>
+                    <li class="nav-li"><a id="hideButton" class="get-started-btn circle d-flex justify-content-center"><img src="/assets/img/icons/back-hand.svg" width="30" /></a></li>
+                    <li class="nav-li"><a href="#about" data-toggle="modal" data-target="#myModal" class="get-started-btn circle d-flex justify-content-center"><img src="/assets/img/icons/support.svg" width="30" /></a></li>
+                    <li class="nav-li"><a href="#about" data-toggle="modal" data-target="#myModal" class="get-started-btn circle d-flex justify-content-center"><img src="/assets/img/icons/start.svg" width="30" /></a></li>
+
                 </ul>
 
                 <div id="myModal" class="modal fade" role="dialog">

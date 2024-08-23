@@ -16,35 +16,20 @@ namespace HackathonProject.Controllers
         }
         public IActionResult Index()
         {
-            _ads.Connect(AmsNetId.Local,851);
-            //ST_OperationMode.eOmState;
-            //ST_OperationMode.eOmSelect
-            //ST_OperationMode.bAccept
-           
-            //FB_LacManager.stLacData;
+            try
+            {
+                _ads.Connect(AmsNetId.Local, 851);
+               /* if (_ads.IsConnected)
+                {
+                   
+                }*/
 
-            //if (_ads.IsConnected)
-            //{
-            //    var bAccept = _ads.ReadValue("LAC01.fbLacManager.stLacData.bAccept");
-            //    var State = _ads.ReadValue("LAC01.fbLacManager.stLacData.eOmState");
-            //    var Select = _ads.ReadValue("LAC01.fbLacManager.stLacData.eOmSelect");
-
-            //    Console.WriteLine("Changement des valeurs");
-                
-            //    _ads.WriteValue("LAC01.fbLacManager.stLacData.bAccept", true);
-            //    _ads.WriteValue("LAC01.fbLacManager.stLacData.eOmState",30);
-            //    _ads.WriteValue("LAC01.fbLacManager.stLacData.eOmSelect",20);
-
-            //    Console.WriteLine("ReLecture des valeurs");
-
-            //    var bAccept1 = _ads.ReadValue("LAC01.fbLacManager.stLacData.bAccept");
-            //    var State1 = _ads.ReadValue("LAC01.fbLacManager.stLacData.eOmState");
-            //    var Select1 = _ads.ReadValue("LAC01.fbLacManager.stLacData.eOmSelect");
-
-            
-            //}
-
-            return View();
+                return View();
+            }
+            catch (Exception ex)
+            {
+                return Ok("You are not connected");
+            };
         }
         public IActionResult Privacy()
         {

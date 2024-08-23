@@ -1,4 +1,5 @@
 using HackathonProject.NewFolder;
+using HackathonProject.Services;
 using TwinCAT.Ads;
 
 namespace HackathonProject
@@ -13,6 +14,7 @@ namespace HackathonProject
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<AdsClient>();
             builder.Services.AddScoped<GVariablesService>();
+            builder.Services.AddScoped<LacService>();
 
             var app = builder.Build();
 
