@@ -41,9 +41,6 @@
                             <img src="assets/img/icons/ic_baseline-not-started.svg" width="40" />
                         </a>
                     </li> *@
-
-                    
-                    
                         <li class="nav-li" alt="Automatic">
       @if (@ViewData["lacMode"] == @DefaultConfig.Automatic) {
                             <a style="background-color:#008F28;" id="automatic"  data-toggle="modal" data-target="#myModal" data-title="Automatic Action" lac-mode="@DefaultConfig.Automatic" data-message="Do you really want to switch to automatic mode?" class="get-started-btn circle d-flex justify-content-center">
@@ -74,7 +71,7 @@
                     <li class="nav-li">
                         @if (@ViewData["lacMode"] == @DefaultConfig.Setup)
                         {
-                            <a style="background-color:#008F28;" id="setup" data-toggle="modal" data-target="#myModal" lac-mode="@DefaultConfig.Setup" data-title="Support Action" data-message="Do you want to contact support?" class="get-started-btn circle d-flex justify-content-center">
+                            <a style="background-color:#008F28;" id="setup" data-toggle="modal" data-target="#myModal" lac-mode="@DefaultConfig.Setup" data-title="Support Action" data-message="Do you want to activate the setup mode?" class="get-started-btn circle d-flex justify-content-center">
                                 <img src="assets/img/icons/support.svg" width="30" />
                             </a>
                         }
@@ -88,7 +85,7 @@
                     <li class="nav-li">
                         @if (@ViewData["lacMode"] == @DefaultConfig.Off)
                         {
-                            <a style="background-color:#008F28;" id="off"  data-toggle="modal" data-target="#myModal" lac-mode="@DefaultConfig.Off" data-title="Start Action" data-message="Do you want to start now?" class="get-started-btn circle d-flex justify-content-center">
+                            <a style="background-color:#008F28;" id="off"  data-toggle="modal" data-target="#myModal" lac-mode="@DefaultConfig.Off" data-title="Start Action" data-message="Do you want to go to go to off mode?" class="get-started-btn circle d-flex justify-content-center">
                                 <img src="assets/img/icons/start.svg" width="30" />
                             </a>
                         }
