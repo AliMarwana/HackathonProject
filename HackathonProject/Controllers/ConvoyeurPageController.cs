@@ -27,15 +27,15 @@ namespace HackathonProject.Controllers
             {
                 _adsClient.Connect(AmsNetId.Local, 851);
                 List<LacInfo> lacInfos = new List<LacInfo>();
-                lacInfos = _lacService.GetLacInfos();
+                //lacInfos = _lacService.GetLacInfos();
                 LacViewModel viewModel = new LacViewModel();
                 viewModel.LacInfos = lacInfos;
-                viewModel.MachineControlVoltageOn = _variablesService.IsVoltageOn();
+               // viewModel.MachineControlVoltageOn = _variablesService.IsVoltageOn();
                 return View(viewModel);
             }
             catch (Exception ex)
             {
-                return View("../Shared/Error",ex.Message);
+                return View("../Shared/Error",new ErrorViewModel { RequestId = ex.Message });
             }
         }
     }

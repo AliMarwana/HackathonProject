@@ -18,7 +18,7 @@ namespace HackathonProject.Controllers
         {
             try
             {
-                _ads.Connect(AmsNetId.Local, 851);
+                //_ads.Connect(AmsNetId.Local, 851);
                /* if (_ads.IsConnected)
                 {
                    
