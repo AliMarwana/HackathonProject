@@ -1,4 +1,5 @@
-﻿@using HackathonProject.ViewModel
+﻿@using HackathonProject.DefaultConfiguration
+@using HackathonProject.ViewModel
 @model ConfigurationViewModel
 @{
     ViewData["lacMode"] = Model.LacInfo.LacMode.Description;
@@ -66,19 +67,53 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="d-flex">
+                                    @if (Model.LacInfo.LacMode.Description == DefaultConfig.Off || Model.LacInfo.LacMode.Description == DefaultConfig.Setup)
+                                    {
                                     <div class="col">
                                         <div>Controlleur</div>
-                                        <div class="youss-controler" data-youss-controler="@Model.GlobalVars.Controller_1" style="width:20px;height:20px;border-radius: 50px;background-color:red;"></div>
+                                        <div  data-youss-controler="@Model.GlobalVars.Controller_1" style="width:20px;height:20px;border-radius: 50px;background-color:red;"></div>
                                     </div>
                                     <div class="col">
                                         <div>Moteur </div>
-                                        <div class="youss-moteur" data-youss-moteur="@Model.GlobalVars.moteur_1" style="width:20px;height:20px;border-radius: 50px;background-color:red;"></div>
+                                        <div  data-youss-moteur="@Model.GlobalVars.moteur_1" style="width:20px;height:20px;border-radius: 50px;background-color:red;"></div>
                                     </div>
                                     <div class="col">
                                         <div>Capteur</div>
-                                        <div class="youss-capteur" data-youss-capteur="@Model.GlobalVars.capter_1" style="width:20px;height:20px;border-radius: 50px;background-color:red;"></div>
-                                    </div>
+                                        <div  data-youss-capteur="@Model.GlobalVars.capter_1" style="width:20px;height:20px;border-radius: 50px;background-color:red;"></div>
+                                        </div>
+                                    }
+                                    else if(Model.LacInfo.LacMode.Description == DefaultConfig.Manual)
+                                    {
+                                        <div class="col">
+                                            <div>Controlleur</div>
+                                            <div  data-youss-controler="@Model.GlobalVars.Controller_1" style="width:20px;height:20px;border-radius: 50px;background-color:blue;"></div>
+                                        </div>
+                                        <div class="col">
+                                            <div>Moteur </div>
+                                            <div  data-youss-moteur="@Model.GlobalVars.moteur_1" style="width:20px;height:20px;border-radius: 50px;background-color:blue;"></div>
+                                        </div>
+                                        <div class="col">
+                                            <div>Capteur</div>
+                                            <div  data-youss-capteur="@Model.GlobalVars.capter_1" style="width:20px;height:20px;border-radius: 50px;background-color:blue;"></div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="col">
+                                            <div>Controlleur</div>
+                                            <div  data-youss-controler="@Model.GlobalVars.Controller_1" style="width:20px;height:20px;border-radius: 50px;background-color:green;"></div>
+                                        </div>
+                                        <div class="col">
+                                            <div>Moteur </div>
+                                            <div  data-youss-moteur="@Model.GlobalVars.moteur_1" style="width:20px;height:20px;border-radius: 50px;background-color:green;"></div>
+                                        </div>
+                                        <div class="col">
+                                            <div>Capteur</div>
+                                            <div data-youss-capteur="@Model.GlobalVars.capter_1" style="width:20px;height:20px;border-radius: 50px;background-color:green;"></div>
+                                        </div>
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -95,18 +130,51 @@
                                     </div>
                                 </div>
                                 <div class="d-flex">
-                                    <div class="col">
-                                        <div>Controlleur</div>
-                                        <div class="youss-controler" data-youss-controler="@Model.GlobalVars.Controller_2" style="width:20px;height:20px;border-radius: 50px;background-color:red;"></div>
-                                    </div>
-                                    <div class="col">
-                                        <div>Moteur </div>
-                                        <div class="youss-moteur" data-youss-moteur="@Model.GlobalVars.moteur_2" style="width:20px;height:20px;border-radius: 50px;background-color:red;"></div>
-                                    </div>
-                                    <div class="col">
-                                        <div>Capteur</div>
-                                        <div class="youss-capteur" data-youss-capteur="@Model.GlobalVars.capter_2" style="width:20px;height:20px;border-radius: 50px;background-color:red;"></div>
-                                    </div>
+                                    @if (Model.LacInfo.LacMode.Description == DefaultConfig.Off || Model.LacInfo.LacMode.Description == DefaultConfig.Setup)
+                                    {
+                                        <div class="col">
+                                            <div>Controlleur</div>
+                                            <div data-youss-controler="@Model.GlobalVars.Controller_1" style="width:20px;height:20px;border-radius: 50px;background-color:red;"></div>
+                                        </div>
+                                        <div class="col">
+                                            <div>Moteur </div>
+                                            <div data-youss-moteur="@Model.GlobalVars.moteur_1" style="width:20px;height:20px;border-radius: 50px;background-color:red;"></div>
+                                        </div>
+                                        <div class="col">
+                                            <div>Capteur</div>
+                                            <div data-youss-capteur="@Model.GlobalVars.capter_1" style="width:20px;height:20px;border-radius: 50px;background-color:red;"></div>
+                                        </div>
+                                    }
+                                    else if (Model.LacInfo.LacMode.Description == DefaultConfig.Manual)
+                                    {
+                                        <div class="col">
+                                            <div>Controlleur</div>
+                                            <div data-youss-controler="@Model.GlobalVars.Controller_1" style="width:20px;height:20px;border-radius: 50px;background-color:blue;"></div>
+                                        </div>
+                                        <div class="col">
+                                            <div>Moteur </div>
+                                            <div data-youss-moteur="@Model.GlobalVars.moteur_1" style="width:20px;height:20px;border-radius: 50px;background-color:blue;"></div>
+                                        </div>
+                                        <div class="col">
+                                            <div>Capteur</div>
+                                            <div data-youss-capteur="@Model.GlobalVars.capter_1" style="width:20px;height:20px;border-radius: 50px;background-color:blue;"></div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="col">
+                                            <div>Controlleur</div>
+                                            <div data-youss-controler="@Model.GlobalVars.Controller_1" style="width:20px;height:20px;border-radius: 50px;background-color:green;"></div>
+                                        </div>
+                                        <div class="col">
+                                            <div>Moteur </div>
+                                            <div data-youss-moteur="@Model.GlobalVars.moteur_1" style="width:20px;height:20px;border-radius: 50px;background-color:green;"></div>
+                                        </div>
+                                        <div class="col">
+                                            <div>Capteur</div>
+                                            <div data-youss-capteur="@Model.GlobalVars.capter_1" style="width:20px;height:20px;border-radius: 50px;background-color:green;"></div>
+                                        </div>
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -123,18 +191,51 @@
                                     </div>
                                 </div>
                                 <div class="d-flex">
-                                    <div class="col">
-                                        <div>Controlleur</div>
-                                        <div class="youss-controler" data-youss-controler="@Model.GlobalVars.Controller_3" style="width:20px;height:20px;border-radius: 50px;background-color:red;"></div>
-                                    </div>
-                                    <div class="col">
-                                        <div>Moteur </div>
-                                        <div class="youss-moteur" data-youss-moteur="@Model.GlobalVars.moteur_3" style="width:20px;height:20px;border-radius: 50px;background-color:red;"></div>
-                                    </div>
-                                    <div class="col">
-                                        <div>Capteur</div>
-                                        <div class="youss-capteur" data-youss-capteur="@Model.GlobalVars.capter_3" style="width:20px;height:20px;border-radius: 50px;background-color:red;"></div>
-                                    </div>
+                                    @if (Model.LacInfo.LacMode.Description == DefaultConfig.Off || Model.LacInfo.LacMode.Description == DefaultConfig.Setup)
+                                    {
+                                        <div class="col">
+                                            <div>Controlleur</div>
+                                            <div data-youss-controler="@Model.GlobalVars.Controller_1" style="width:20px;height:20px;border-radius: 50px;background-color:red;"></div>
+                                        </div>
+                                        <div class="col">
+                                            <div>Moteur </div>
+                                            <div data-youss-moteur="@Model.GlobalVars.moteur_1" style="width:20px;height:20px;border-radius: 50px;background-color:red;"></div>
+                                        </div>
+                                        <div class="col">
+                                            <div>Capteur</div>
+                                            <div data-youss-capteur="@Model.GlobalVars.capter_1" style="width:20px;height:20px;border-radius: 50px;background-color:red;"></div>
+                                        </div>
+                                    }
+                                    else if (Model.LacInfo.LacMode.Description == DefaultConfig.Manual)
+                                    {
+                                        <div class="col">
+                                            <div>Controlleur</div>
+                                            <div data-youss-controler="@Model.GlobalVars.Controller_1" style="width:20px;height:20px;border-radius: 50px;background-color:blue;"></div>
+                                        </div>
+                                        <div class="col">
+                                            <div>Moteur </div>
+                                            <div data-youss-moteur="@Model.GlobalVars.moteur_1" style="width:20px;height:20px;border-radius: 50px;background-color:blue;"></div>
+                                        </div>
+                                        <div class="col">
+                                            <div>Capteur</div>
+                                            <div data-youss-capteur="@Model.GlobalVars.capter_1" style="width:20px;height:20px;border-radius: 50px;background-color:blue;"></div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="col">
+                                            <div>Controlleur</div>
+                                            <div data-youss-controler="@Model.GlobalVars.Controller_1" style="width:20px;height:20px;border-radius: 50px;background-color:green;"></div>
+                                        </div>
+                                        <div class="col">
+                                            <div>Moteur </div>
+                                            <div data-youss-moteur="@Model.GlobalVars.moteur_1" style="width:20px;height:20px;border-radius: 50px;background-color:green;"></div>
+                                        </div>
+                                        <div class="col">
+                                            <div>Capteur</div>
+                                            <div data-youss-capteur="@Model.GlobalVars.capter_1" style="width:20px;height:20px;border-radius: 50px;background-color:green;"></div>
+                                        </div>
+                                    }
                                 </div>
                             </div>
                         </div>
