@@ -505,6 +505,7 @@ footer {
     padding: 5px;
     width: 50%;
     border-radius: 5px;
+    cursor:pointer;
 }
 
 .sub-container {
