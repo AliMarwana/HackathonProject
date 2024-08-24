@@ -41,7 +41,7 @@
             </li>
         </ul>
     </nav>
-    <div class="row youss-row">
+    <div class="row youss-row w-100">
       @foreach(var lac in Model.LacInfos)
         {
             <div class="col-sm-6">
@@ -50,7 +50,7 @@
                         <div style="display:flex; justify-content:space-between;">
                             <h5 class="card-title">@lac.DisplayName</h5>
                             <div class="d-flex justify-content-between youss-light">
-                                @if (Model.MachineControlVoltageOn)
+                                @if (lac.Onvoltage)
                                 {
                                     <div>
                                         <svg width="40" height="40" viewBox="0 0 132 132" fill="none" xmlns="http://www.w3.org/2000/svg">

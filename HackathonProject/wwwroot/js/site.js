@@ -14,7 +14,7 @@ document.querySelectorAll('.youss-click').forEach((val) => {
                 let controler = val.querySelector('.youss-controler').getAttribute('data-youss-controler');
                 let moteur = val.querySelector('.youss-moteur').getAttribute('data-youss-moteur');
                 let capteur = val.querySelector('.youss-capteur').getAttribute('data-youss-capteur');
-                if (controler == moteur && moteur == capteur) {
+                if (controler == moteur && moteur == capteur && moteur == 'True') {
                     replaceimgtrue('on');
                 } else {
                     replaceimgtrue('off');
@@ -27,7 +27,7 @@ document.querySelectorAll('.youss-click').forEach((val) => {
             let controler = val.querySelector('.youss-controler').getAttribute('data-youss-controler');
             let moteur = val.querySelector('.youss-moteur').getAttribute('data-youss-moteur');
             let capteur = val.querySelector('.youss-capteur').getAttribute('data-youss-capteur');
-            if (controler == moteur && moteur == capteur) {
+            if (controler == moteur && moteur == capteur && moteur=='True') {
                 replaceimgtrue('on');
             } else {
                 replaceimgtrue('off');

@@ -76,6 +76,8 @@ namespace HackathonProject.Services
             LacInfo lac2 = lacInfos.Where(p => p.DisplayName == DefaultConfig.Lac02).FirstOrDefault()!;
             lac1.LacMode = GetModeLac1();
             lac2.LacMode = GetModeLac2();
+            lac1.Onvoltage = _ads.ReadValue<bool>("LAC01.fbLacManager.RefLacData.bControlVoltageOn");
+            lac2.Onvoltage = _ads.ReadValue<bool>("LAC02.fbLacManager.RefLacData.bControlVoltageOn");
             return lacInfos;
         }
         public LacInfo GetSpecificLacInfo(string lacName)

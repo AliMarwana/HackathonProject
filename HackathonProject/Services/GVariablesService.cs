@@ -92,6 +92,7 @@ namespace HackathonProject.NewFolder
             globalVars.capter_11 = ReadVar<bool>("GIO.Ib0111_ARC_Stop");
 
             globalVars.Controller_12 = ReadVar<bool>("GIO.Ib0112_SLC_ControllerReady");
+            //To SEE link Moteur 
             globalVars.moteur_12 = ReadVar<bool>("GIO.Ob0109_ARC_EnableController");
             globalVars.capter_12_Bottom = ReadVar<bool>("GIO.Ib0112_LT_Bottom");
             globalVars.capter_12_Top = ReadVar<bool>("GIO.Ib0112_LT_Top");
@@ -146,6 +147,7 @@ namespace HackathonProject.NewFolder
             globalVars.capter_4 = ReadVar<bool>("GIO.Ib0204_RC_Stop");
 
             globalVars.Lac1VoltageOn = ReadVar<bool>("LAC01.fbLacManager.RefLacData.bControlVoltageOn");
+            globalVars.Lac2VoltageOn = ReadVar<bool>("LAC02.fbLacManager.RefLacData.bControlVoltageOn");
 
 
             return globalVars;

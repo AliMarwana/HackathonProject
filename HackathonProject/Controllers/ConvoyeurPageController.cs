@@ -30,7 +30,7 @@ namespace HackathonProject.Controllers
                 lacInfos = _lacService.GetLacInfos();
                 LacViewModel viewModel = new LacViewModel();
                 viewModel.LacInfos = lacInfos;
-               viewModel.MachineControlVoltageOn = _variablesService.IsVoltageOn();
+                viewModel.MachineControlVoltageOn = _variablesService.IsVoltageOn();
                 return View(viewModel);
             }
             catch (Exception ex)
