@@ -38,7 +38,15 @@ namespace HackathonProject.Controllers
         {
             return View();
         }
-
+        [HttpPost]
+        public IActionResult Login(string password, string mode)
+        {
+            if (mode == "expert" && password == "Expert-87.1990")
+            {
+                return RedirectToAction("Index", "Dashboard");
+            }
+            return RedirectToAction("Index", "Error", new { message = "Invalid password" });
+        }
         /*[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

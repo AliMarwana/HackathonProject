@@ -10,4 +10,8 @@
     <PackageReference Include="Beckhoff.TwinCAT.Ads" Version="6.1.260" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Account\" />
+  </ItemGroup>
+
 </Project>
