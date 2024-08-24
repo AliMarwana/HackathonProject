@@ -19,6 +19,10 @@ namespace HackathonProject.DefaultConfiguration
             lacModes.Add(new LacMode { Description = "Setup", Value = 10 });
             return lacModes;
         }
+        public static string GetModeLac(int value)
+        {
+            return LacModes().Where(p => p.Value == value).FirstOrDefault().Description;
+        }
         public static List<LacStatus> LacStatuses()
         {
             List<LacStatus> lacStatuses = new List<LacStatus>();

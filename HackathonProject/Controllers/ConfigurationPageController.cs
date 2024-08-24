@@ -24,29 +24,42 @@ namespace HackathonProject.Controllers
         }
         public IActionResult Index(string lacName)
         {
-            _adsClient.Connect(AmsNetId.Local, 851);
-            LacInfo lacInfo = _lacService.GetSpecificLacInfo(lacName);
-            GlobalVars globalVars = _variablesService.GetGlobal();
-            ConfigurationViewModel viewModel = new ConfigurationViewModel();
-            viewModel.GlobalVars = globalVars;
-            viewModel.LacInfo = lacInfo;
-            return View(viewModel);
+            try
+            {
+                _adsClient.Connect(AmsNetId.Local, 851);
+                LacInfo lacInfo = _lacService.GetSpecificLacInfo(lacName);
+                GlobalVars globalVars = _variablesService.GetGlobal();
+                ConfigurationViewModel viewModel = new ConfigurationViewModel();
+                viewModel.GlobalVars = globalVars;
+                viewModel.LacInfo = lacInfo;
+                return View(viewModel);
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Error", new { message = ex.Message });
+            };
         }
         [HttpGet]
         public async Task<IActionResult> SetAction(string mode, string lacName)
         {
-            LacInfo lacInfo = _lacService.GetSpecificLacInfo(lacName);
-            if(lacName == DefaultConfig.Lac01)
+            try
             {
-                await _lacService.SetModeLac1(mode);
+                LacInfo lacInfo = _lacService.GetSpecificLacInfo(lacName);
+                if (lacName == DefaultConfig.Lac01)
+                {
+                    await _lacService.SetModeLac1(mode);
+                }
+                else
+                {
+                    await _lacService.SetModeLac2(mode);
+                }
+                return Ok();
             }
-            else
+            catch (Exception ex)
             {
-                await _lacService.SetModeLac2(mode);
-            }
-            return Ok();
-
-        //    return RedirectToAction("Index", "Configuration", new {lacName = lacName});
+                return RedirectToAction("Index", "Error", new { message = ex.Message });
+            };
+            //    return RedirectToAction("Index", "Configuration", new {lacName = lacName});
         }
 
         public async Task<IActionResult> Forward(int n)
@@ -132,12 +145,13 @@ namespace HackathonProject.Controllers
                         return Ok();
                 }
                 return Ok();
-            }catch(Exception e)
-            {
-                return BadRequest();
             }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Error", new { message = ex.Message });
+            };
             //_forwarService.Forward1();
-            
+
 
             //    return RedirectToAction("Index", "Configuration", new {lacName = lacName});
         }
