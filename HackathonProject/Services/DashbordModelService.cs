@@ -22,7 +22,8 @@ namespace HackathonProject.Services
         public DashbordModel GetDashbordProperties()
         {
             DashbordModel dash = new DashbordModel();
-            dash.ControlOnValtage = ReadVar<bool>("GIO.IbIP02_ControlVoltageOn");
+            //dash.ControlOnValtage = ReadVar<bool>("GIO.IbIP02_ControlVoltageOn");
+            dash.ControlOnValtage = ReadVar<bool>("LAC01.fbLacManager.RefLacData.bControlVoltageOn");
 
             dash.LampTest = ReadVar<bool>("GIO.IbLP01_LamptestHornTestInfeed");
             dash.SystemStartOff = ReadVar<bool>("GIO.IbLP01_SystemStart");

@@ -75,7 +75,7 @@ let replaceimgtrue = (state) => {
             document.querySelector('.youss-true-img').setAttribute('src', '/assets/img/ARC.gif');
             break;
         case "off":
-            document.querySelector('.youss-true-img').setAttribute('src', '/assets/img/ARC_default.png');
+            document.querySelector('.youss-true-img').setAttribute('src', '/assets/img/ARC.gif');
             break;
         default:
             break;
