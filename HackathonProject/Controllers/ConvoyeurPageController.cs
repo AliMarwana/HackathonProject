@@ -37,5 +37,26 @@ namespace HackathonProject.Controllers
                 return RedirectToAction("Index", "Error", new { message = ex.Message });
             };
         }
+        public async Task<IActionResult> SetMode(string lacName, string mode)
+        {
+            try
+            {
+                LacInfo lacInfo = _lacService.GetSpecificLacInfo(lacName);
+                if (lacName == DefaultConfig.Lac01)
+                {
+                    await _lacService.SetModeLac1(mode);
+                }
+                else
+                {
+                    await _lacService.SetModeLac2(mode);
+                }
+                return RedirectToAction("Index", "ConvoyeurPage");
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Error", new { message = ex.Message });
+            };
+
+        }
     }
 }
