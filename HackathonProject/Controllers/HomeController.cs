@@ -12,7 +12,7 @@ namespace HackathonProject.Controllers
         public HomeController(ILogger<HomeController> logger, AdsClient ads)
         {
             _logger = logger;
-            _ads = ads; 
+            this._ads = ads; 
         }
         public IActionResult Index()
         {
@@ -23,6 +23,9 @@ namespace HackathonProject.Controllers
                 {
                    
                 }*/
+
+                //var bForword = _ads.ReadValue("st01EL.fbMan.Button.bForward");
+                //var bForword1 = _ads.ReadValue("st01EL.fbMan.Button.bForward");
 
                 return View();
             }

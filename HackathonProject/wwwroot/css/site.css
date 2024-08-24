@@ -240,7 +240,7 @@ footer {
 .nav-li a {
     padding:0
 }
-.youss-row{
+/*.youss-row{
     padding:1em;
 }
 .youss-card {
@@ -271,19 +271,19 @@ footer {
     padding: 0 !important;
     background-color: #37517e;
 }
-.youss-container {
+.youss-container {*/
     /* Basic dimensions and centering */
-    width: 100px;
+    /*width: 100px;
     height: 40px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;*/
     /* Dark mode colors and gradient */
-    background: #121212; /* Fallback for browsers that don't support gradients */
-    background: linear-gradient( 135deg, #f6a823 25%, #fff 25%, #fff 50%, #f6a823 50%, #f6a823 75%, #fff 75%, #fff );
-    background-size: 40px 40px;
+    /*background: #121212;*/ /* Fallback for browsers that don't support gradients */
+    /*background: linear-gradient( 135deg, #f6a823 25%, #fff 25%, #fff 50%, #f6a823 50%, #f6a823 75%, #fff 75%, #fff );
+    background-size: 40px 40px;*/
     /* Animation */
-    animation: move 4s linear infinite;
+    /*animation: move 4s linear infinite;
 }
 
 @keyframes move {
@@ -324,6 +324,207 @@ footer {
     padding: 5px;
     width: 50%;
     border-radius: 5px;
+}*/
+
+.youss-row {
+    padding: 1em;
+}
+
+.youss-card {
+    -webkit-box-shadow: 0px 4px 50px -10px rgba(0,0,0,0.23);
+    -moz-box-shadow: 0px 4px 50px -10px rgba(0,0,0,0.23);
+    box-shadow: 0px 4px 50px -10px rgba(0,0,0,0.23);
+    width: auto !important;
+}
+
+.card-width {
+    width: 1000px;
+}
+
+.youss-btn {
+    background-color: #37517e !important;
+    color: #fff !important;
+}
+
+.youss-signal {
+    width: 1em;
+    height: 1em;
+    border-radius: 50px;
+    background-color: red;
+}
+
+.youss-vl {
+    border-right: 2px solid #37517e;
+}
+
+.youss-second-card {
+    -webkit-box-shadow: 0px 8px 21px -7px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 8px 21px -7px rgba(0,0,0,0.4);
+    box-shadow: 0px 8px 21px -7px rgba(0,0,0,0.4);
+}
+
+.youss-light {
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #37517e;
+}
+
+.youss-container {
+    /* Basic dimensions and centering */
+    width: 100px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Dark mode colors and gradient */
+    background: #121212; /* Fallback for browsers that don't support gradients */
+    background: linear-gradient( 135deg, #f6a823 25%, #fff 25%, #fff 50%, #f6a823 50%, #f6a823 75%, #fff 75%, #fff );
+    background-size: 40px 40px;
+    /* Animation */
+    animation: move 4s linear infinite;
+}
+
+.wrapper {
+    background: white;
+    box-shadow: 1px 1px 10px #999;
+    text-align: center;
+    position: relative;
+    border-radius: 5px;
+    margin-bottom: 20px !important;
+    width: 100%;
+    padding-top: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    display: inline-block;
+}
+
+.scrolls {
+    height: 80px;
+    white-space: nowrap;
+    transition: transform 0.5s;
+}
+
+.imageDiv img {
+    box-shadow: 1px 1px 10px #999;
+    margin: 2px;
+    max-height: 50px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.scroll-horizontal-izquierda {
+    left: 0;
+}
+
+.scroll-horizontal-derecha {
+    right: 0;
+}
+
+.scroll {
+    background: white;
+    padding-top: 22px;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 2;
+}
+
+.wrappper1
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+.youss-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    /*width:75vh !important;*/
+    white-space: nowrap;
+}
+
+.youss-item {
+    width: 50em;
+    height: 5em;
+    background-color: #f0f0f0;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+@keyframes move {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 40px 40px;
+    }
+}
+
+.left-container {
+    width: 100% !important;
+    text-align:center;
+}
+
+#formulaire {
+    display: none;
+    width: 100% !important;
+    height: 90%;
+    padding: 10px 10px 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.6) !important;
+    background-color: white;
+}
+
+.arc {
+    border: solid 1px;
+    padding: 5px;
+    width: 50%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.arc-action {
+    color: white;
+    text-align: center;
+    background-color: green;
+    padding: 5px;
+    width: 50%;
+    border-radius: 5px;
+}
+
+.sub-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: scroll;
+    width: 100%;
+}
+
+    .sub-container::-webkit-scrollbar {
+        display: none
+    }
+
+.content {
+    margin-left: 50px;
+    width: calc(100% - 50px) !important;
+}
+.youss-img{
+
+}
 }
 
 .form-group input, .form-group select {
@@ -353,4 +554,7 @@ select option[value=""] {
     font-weight: 500 !important;
     letter-spacing: 2px !important;
     text-transform: uppercase !important;
+}
+.youss-active-border {
+    border: 2px solid #37517e;
 }

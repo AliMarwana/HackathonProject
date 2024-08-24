@@ -36,14 +36,18 @@
             <h1 class="logo mr-auto"><a asp-area="" asp-controller="Home">Group 5</a></h1>
             <nav class="nav-menu d-none d-lg-block d-flex align-items-center">
                 <ul class="d-flex align-items-center justify-content-end">
-    @*                 <li class="nav-li" alt="Pause">
-                        <a href="#about" data-toggle="modal" data-target="#myModal" data-title="Pause Action" data-message="Do you really want to pause?" class="get-started-btn circle d-flex justify-content-center">
-                            <img src="assets/img/icons/ic_baseline-not-started.svg" width="40" />
-                        </a>
+                    @*                 <li class="nav-li" alt="Pause">
+                    <a href="#about" data-toggle="modal" data-target="#myModal" data-title="Pause Action" data-message="Do you really want to pause?" class="get-started-btn circle d-flex justify-content-center">
+                    <img src="assets/img/icons/ic_baseline-not-started.svg" width="40" />
+                    </a>
                     </li> *@
-                        <li class="nav-li" alt="Automatic">
-      @if (@ViewData["lacMode"] == @DefaultConfig.Automatic) {
-                            <a style="background-color:#008F28;" id="automatic"  data-toggle="modal" data-target="#myModal" data-title="Automatic Action" lac-mode="@DefaultConfig.Automatic" data-message="Do you really want to switch to automatic mode?" class="get-started-btn circle d-flex justify-content-center">
+
+
+
+                    <li class="nav-li" alt="Automatic">
+                        @if (@ViewData["lacMode"] == @DefaultConfig.Automatic)
+                        {
+                            <a style="background-color:#008F28;" id="automatic" data-toggle="modal" data-target="#myModal" data-title="Automatic Action" lac-mode="@DefaultConfig.Automatic" data-message="Do you really want to switch to automatic mode?" class="get-started-btn circle d-flex justify-content-center">
                                 <img src="assets/img/icons/ic_outline-auto-mode.svg" width="30" />
                             </a>
                         }
@@ -54,11 +58,12 @@
                             </a>
                         }
                     </li>
-                    
+
                     <li class="nav-li">
-         @if (@ViewData["lacMode"] == @DefaultConfig.Manual) {
+                        @if (@ViewData["lacMode"] == @DefaultConfig.Manual)
+                        {
                             <a id="hideButton" style="background-color:#008F28;" data-toggle="modal" data-target="#myModal" lac-mode="@DefaultConfig.Manual" data-title="Toggle Manual Mode" data-message="Do you really want to activate/deactivate manual mode?" class="get-started-btn circle d-flex justify-content-center">
-                            <img src="assets/img/icons/back-hand.svg" width="30" />
+                                <img src="assets/img/icons/back-hand.svg" width="30" />
                             </a>
                         }
                         else
@@ -71,13 +76,13 @@
                     <li class="nav-li">
                         @if (@ViewData["lacMode"] == @DefaultConfig.Setup)
                         {
-                            <a style="background-color:#008F28;" id="setup" data-toggle="modal" data-target="#myModal" lac-mode="@DefaultConfig.Setup" data-title="Support Action" data-message="Do you want to activate the setup mode?" class="get-started-btn circle d-flex justify-content-center">
+                            <a style="background-color:#008F28;" id="setup" data-toggle="modal" data-target="#myModal" lac-mode="@DefaultConfig.Setup" data-title="Support Action" data-message="Do you want to activate/deactive the setup mode?" class="get-started-btn circle d-flex justify-content-center">
                                 <img src="assets/img/icons/support.svg" width="30" />
                             </a>
                         }
                         else
                         {
-                            <a id="setup"  data-toggle="modal" data-target="#myModal" data-title="Support Action" data-message="Do you want to contact support?" lac-mode="@DefaultConfig.Setup" class="get-started-btn circle d-flex justify-content-center">
+                            <a id="setup" data-toggle="modal" data-target="#myModal" data-title="Support Action" data-message="Do you want to activate/deactive the setup mode?" lac-mode="@DefaultConfig.Setup" class="get-started-btn circle d-flex justify-content-center">
                                 <img src="assets/img/icons/support.svg" width="30" />
                             </a>
                         }
@@ -85,13 +90,13 @@
                     <li class="nav-li">
                         @if (@ViewData["lacMode"] == @DefaultConfig.Off)
                         {
-                            <a style="background-color:#008F28;" id="off"  data-toggle="modal" data-target="#myModal" lac-mode="@DefaultConfig.Off" data-title="Start Action" data-message="Do you want to go to go to off mode?" class="get-started-btn circle d-flex justify-content-center">
+                            <a style="background-color:#008F28;" id="off"  data-toggle="modal" data-target="#myModal" lac-mode="@DefaultConfig.Off" data-title="Start Action" data-message="Do you want to Do you want to activate/deactive the off mode?" class="get-started-btn circle d-flex justify-content-center">
                                 <img src="assets/img/icons/start.svg" width="30" />
                             </a>
                         }
                         else
                         {
-                            <a id="off"  data-toggle="modal" data-target="#myModal" data-title="Start Action" data-message="Do you want to start now?" lac-mode="@DefaultConfig.Off" class="get-started-btn circle d-flex justify-content-center">
+                            <a id="off" data-toggle="modal" data-target="#myModal" data-title="Start Action" data-message="Do you want to activate/deactive the off mode?" lac-mode="@DefaultConfig.Off" class="get-started-btn circle d-flex justify-content-center">
                                 <img src="assets/img/icons/start.svg" width="30" />
                             </a>
                         }
@@ -100,7 +105,7 @@
 
                 <div id="myModal" class="modal fade" role="dialog">
                     <form class="modal-dialog">
-                    
+
                         <div class="modal-content">
                             <div class="modal-header d-flex flex-row justify-content-between w-100">
                                 <h4 class="modal-title">Confirmation</h4>
@@ -111,11 +116,11 @@
                             <input id="idMode" hidden name="mode" />
                             <div class="d-flex p-3 gap-3">
                                 <button type="button" class="btn btn-danger w-50" data-dismiss="modal">No</button>
-                                <button  type="button" id="confirmAction" class="btn btn-success w-50" data-dismiss="modal">Yes</button>
+                                <button type="button" id="confirmAction" class="btn btn-success w-50" data-dismiss="modal">Yes</button>
                                 <button id="submit-mode" type="submit" hidden></button>
                             </div>
                         </div>
-                    
+
                     </form>
                 </div>
 
@@ -180,14 +185,17 @@
                 var formulaire = document.getElementById("formulaire");
                 if (formulaire.style.display === 'none') {
                     formulaire.style.display = 'block';
-                    //                  hideButton.style.backgroundColor = "#008F28";
+                    document.querySelector(".left-container").classList.add('col-12');
+                    document.querySelector(".left-container").classList.remove('col-9');
                 } else if (formulaire.style.display === 'block') {
                     formulaire.style.display = 'none';
-                    //   hideButton.style.backgroundColor = "transparent";
+                    document.querySelector(".left-container").classList.remove('col-12');
+                    document.querySelector(".left-container").classList.add('col-9');
                 }
                 else {
                     formulaire.style.display = 'block';
-                    //             hideButton.style.backgroundColor = "#008F28";
+                    document.querySelector(".left-container").classList.remove('col-12');
+                    document.querySelector(".left-container").classList.add('col-9');
                 }
             }
             document.querySelectorAll('[data-toggle="modal"]').forEach(function (button) {
@@ -203,14 +211,14 @@
 
                 });
             });
-     
+
             confirmButton.addEventListener('click',
                 function () {
                     $.ajax({
                         url: '/ConfigurationPage/SetAction',
 
                         //     data: { idIdea: ideaId, idUser: userId, pg: currentPage, pageSize: pgeSize },
-                        data: { mode: lacModeChosen, lacName: '@ViewData["lacName"]'},
+                        data: { mode: lacModeChosen, lacName: '@ViewData["lacName"]' },
                         type: "Get",
                         success: function (result) {
 
@@ -226,7 +234,7 @@
 
 
                     });
-                    
+
                     // if (modalTitle.textContent === "Toggle Manual Mode") {
                     //     var hideButton = document.getElementById('hideButton');
                     //     var formulaire = document.getElementById("formulaire");
@@ -241,7 +249,7 @@
                     //         formulaire.style.display = 'block';
                     //         //             hideButton.style.backgroundColor = "#008F28";
                     //     }
-                        
+
                     // }
 
 

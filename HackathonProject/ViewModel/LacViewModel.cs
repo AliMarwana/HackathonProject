@@ -6,5 +6,6 @@ namespace HackathonProject.ViewModel
     {
         public List<LacInfo> LacInfos { get; set; }
         public bool MachineControlVoltageOn { get; set; }
+
     }
 }
