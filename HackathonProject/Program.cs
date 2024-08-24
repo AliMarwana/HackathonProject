@@ -15,6 +15,7 @@ namespace HackathonProject
             builder.Services.AddScoped<GVariablesService>();
             builder.Services.AddScoped<LacService>();
             builder.Services.AddScoped<ForwardService>();
+            builder.Services.AddScoped<DashbordModelService>();
 
             var app = builder.Build();
 

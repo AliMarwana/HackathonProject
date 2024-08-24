@@ -1,6 +1,6 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using HackathonProject.DefaultConfiguration
+
+@model DashbordModel
 @{
     Layout = "_LayoutWithSidebar";
 }
@@ -45,7 +45,7 @@
     </nav>
     <div class="container">
         <div class="row">
-            <div class="card border-light youss-second-card col bg-light m-3" style="max-width: 18rem;">
+   @*          <div class="card border-light youss-second-card col bg-light m-3" style="max-width: 18rem;">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <div style="display:flex; flex-direction:column; justify-content:space-between;">
@@ -64,35 +64,29 @@
                                Emergency Stop
                             </h5>
                         </div>
-                        <div class="youss-signal"></div>
+                        @if (@Model.EmergencyStop)
+                        {
+                            <div class="youss-signal  bg-success"></div>
+
+                        }
+                        else
+                        {
+                            <div class="youss-signal"></div>
+                            
+                        }
                     </div>
-                    <p class="card-text">Not Actived</p>
+                    @if(Model.EmergencyStop)
+                    {
+                        <p class="card-text">Actived</p>
+                    }
+                    else
+                    {
+                        <p class="card-text">Not Actived</p>
+                    }
+
                 </div>
             </div>
-            <div class="card border-light youss-second-card col bg-light m-3" style="max-width: 18rem;">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                        <div style="display:flex; flex-direction:column; justify-content:space-between;">
-                            <svg width="30" height="30" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_13_52)">
-                                    <path d="M26 0C19.1044 0 12.4912 2.73928 7.61522 7.61522C2.73928 12.4912 0 19.1044 0 26C0 32.8956 2.73928 39.5088 7.61522 44.3848C12.4912 49.2607 19.1044 52 26 52C32.8956 52 39.5088 49.2607 44.3848 44.3848C49.2607 39.5088 52 32.8956 52 26C52 19.1044 49.2607 12.4912 44.3848 7.61522C39.5088 2.73928 32.8956 0 26 0ZM26 47.125C20.3973 47.125 15.0241 44.8993 11.0624 40.9376C7.10066 36.9759 4.875 31.6027 4.875 26C4.875 20.3973 7.10066 15.0241 11.0624 11.0624C15.0241 7.10066 20.3973 4.875 26 4.875C31.6027 4.875 36.9759 7.10066 40.9376 11.0624C44.8993 15.0241 47.125 20.3973 47.125 26C47.125 31.6027 44.8993 36.9759 40.9376 40.9376C36.9759 44.8993 31.6027 47.125 26 47.125ZM16.25 16.25H35.75V35.75H16.25V16.25Z" fill="#D41010" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_13_52">
-                                        <rect width="52" height="52" fill="white" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                            <h5 class="card-title mt-2">
-                                Unlock Stop
-                            </h5>
-                        </div>
-                        <div class="youss-signal  bg-success"></div>
-                    </div>
-                    <p class="card-text">Unlock</p>
-                </div>
-            </div>
-            <div class="card border-light youss-second-card col bg-light m-3" style="max-width: 18rem;">
+    *@         <div class="card border-light youss-second-card col bg-light m-3" style="max-width: 18rem;">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <div style="display:flex; flex-direction:column; justify-content:space-between;">
@@ -103,9 +97,25 @@
                                 Control Onvoltage
                             </h5>
                         </div>
-                        <div class="youss-signal  bg-success"></div>
+                        @if(Model.ControlOnValtage)
+                        {
+                            <div class="youss-signal  bg-success"></div>
+                        }
+                        else
+                        {
+                            <div class="youss-signal"></div>
+                        }
+
                     </div>
-                    <p class="card-text">On</p>
+                    @if(Model.ControlOnValtage)
+                    {
+                        <p class="card-text">On</p>
+                    }
+                    else
+                    {
+                        <p class="card-text">Off</p>
+                    }
+
                 </div>
             </div>
             <div class="card border-light youss-second-card col bg-light m-3" style="max-width: 18rem;">
@@ -119,14 +129,26 @@
                                 System
                             </h5>
                         </div>
-                        <div class="youss-signal  bg-success"></div>
+                        @if (Model.SystemStartOff)
+                        {
+                            <div class="youss-signal  bg-success"></div>
+                        }
+                        else
+                        {
+                            <div class="youss-signal"></div>
+                        }
                     </div>
-                    <p class="card-text">Start</p>
+                    @if(Model.SystemStartOff)
+                    {
+                        <p class="card-text">Active</p>
+                    }
+                    else
+                    {
+                        <p class="card-text">Off</p>
+                    }
+
                 </div>
             </div>
-        </div>
-
-        <div class="row">
             <div class="card border-light youss-second-card col bg-light m-3" style="max-width: 18rem;">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
@@ -140,11 +162,32 @@
                                 Lamp Test
                             </h5>
                         </div>
-                        <div class="youss-signal bg-success"></div>
+                        @if (Model.LampTest)
+                        {
+                            <div class="youss-signal bg-success"></div>
+                        }
+                        else
+                        {
+                            <div class="youss-signal"></div>
+                        }
                     </div>
+                    @if (Model.LampTest)
+                    {
+                        <p class="card-text">Test</p>
+                    }
+                    else
+                    {
+                        <p class="card-text">No test</p>
+                    }
+
+
                 </div>
             </div>
-            <div class="card border-light youss-second-card col bg-light m-3" style="max-width: 18rem;">
+
+        </div>
+
+        <div class="row">
+           <div class="card border-light youss-second-card col bg-light m-3" style="max-width: 18rem;">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <div style="display:flex; flex-direction:column; justify-content:space-between;">
@@ -157,31 +200,45 @@
                                 LAC1
                             </h5>
                         </div>
-                        <div class="youss-signal bg-success"></div>
+                        @if (Model.Lac1EnergyOn)
+                        {
+                            <div class="youss-signal bg-success"></div>
+                        }
+                        else
+                        {
+                            <div class="youss-signal"></div>
+                        }
                     </div>
-                    <p class="card-text">Automatic</p>
+                    <p class="card-text">@DefaultConfig.GetModeLac(@Model.Lac1Mode)</p>
                 </div>
             </div>
             <div class="card border-light youss-second-card col bg-light m-3" style="max-width: 18rem;">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <div style="display:flex; flex-direction:column; justify-content:space-between;">
-                            <svg width="30" height="30" viewBox="0 0 132 132" fill="none" xmlns="http://www.w3.org/2000/svg">
+   @*                          <svg width="30" height="30" viewBox="0 0 132 132" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12.1687 127.875C5.36249 127.875 2.26874 122.925 5.36249 116.944L60.4312 8.6625C63.525 2.68125 68.475 2.68125 71.5687 8.6625L126.637 116.944C129.731 122.925 126.637 127.875 119.831 127.875H12.1687Z" fill="#FFCE31" />
                                 <path d="M57.3375 48.675L63.1125 86.8312C63.7312 90.5437 68.475 90.5437 69.0937 86.8312L74.6625 48.675C75.6937 33.825 56.3062 33.825 57.3375 48.675Z" fill="#231F20" />
                                 <path d="M66 110.962C70.7842 110.962 74.6625 107.084 74.6625 102.3C74.6625 97.5158 70.7842 93.6375 66 93.6375C61.2158 93.6375 57.3375 97.5158 57.3375 102.3C57.3375 107.084 61.2158 110.962 66 110.962Z" fill="#231F20" />
-                            </svg>
+                            </svg> *@
                             <h5 class="card-title mt-2">
                                 LAC2
                             </h5>
                         </div>
-                        <div class="youss-signal"></div>
+                        @if(Model.Lac2EnergyOn)
+                        {
+                            <div class="youss-signal bg-success"></div>
+                        }
+                        else
+                        {
+                            <div class="youss-signal"></div>
+                        }
+                   
                     </div>
-                    <p class="card-text">Manual</p>
+                    <p class="card-text">@DefaultConfig.GetModeLac(Model.Lac2Mode)</p>
                 </div>
             </div>
-            <div class="card border-light youss-second-card col bg-light m-3" style="max-width: 18rem;">
-            </div>
+         
         </div>
     </div>
 </div>
