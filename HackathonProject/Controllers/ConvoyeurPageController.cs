@@ -1,6 +1,5 @@
 ﻿using HackathonProject.DefaultConfiguration;
 using HackathonProject.Models;
-using HackathonProject.NewFolder;
 using HackathonProject.Services;
 using HackathonProject.ViewModel;
 using Microsoft.AspNetCore.Mvc;

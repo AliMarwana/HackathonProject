@@ -2,7 +2,7 @@
 using System.Net.Sockets;
 using TwinCAT.Ads;
 
-namespace HackathonProject.NewFolder
+namespace HackathonProject.Services
 {
     public class GVariablesService
     {
