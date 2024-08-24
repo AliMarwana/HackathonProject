@@ -111,3 +111,16 @@ document.querySelectorAll('.youss-capteur').forEach((val) => {
             break;
     }
 });
+
+document.querySelectorAll('.arc-action').forEach((val) => {
+    val.addEventListener('click', () => {
+        let url = '/ConfigurationPage/Forward?n=1';
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = () => {
+            var res = this.responseText;
+            console.log('hello ' + res);
+        }
+        xhttp.open("GET", url);
+        xhttp.send();
+    })
+})
