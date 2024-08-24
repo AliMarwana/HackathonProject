@@ -132,7 +132,7 @@
     </div>
     <a href="#" class="back-to-top"><i class="ri-arrow-up-line"></i></a>
     <div id="preloader"></div>
-    <!-- Trigger the modal with a button -->
+
     <!-- Vendor JS Files -->
     <script src="~/assets/vendor/jquery/jquery.min.js"></script>
     <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -150,24 +150,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @* <script>
-    confirmButton.addEventListener('click', function () {
-    if (confirmButton != null) {
 
-    document.getElementById("hideButton").onclick = function () {
-    var formulaire = document.getElementById("formulaire");
-    if (formulaire.style.display === 'none') {
-    formulaire.style.display = 'block';
-    this.style.backgroundColor = "#008F28";
-    } else {
-    formulaire.style.display = 'none';
-    this.style.backgroundColor = "transparent";
-    }
-    };
-    confirmButton = null;
-    }
-    });
-    </script> *@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var modal = document.getElementById('myModal');
@@ -231,78 +214,7 @@
                             console.log("Custom error : " + jqXHR.responseText + " Status: " + textStatus + " Http error:" + errorThrown);
 
                         }
-
-
                     });
-
-                    // if (modalTitle.textContent === "Toggle Manual Mode") {
-                    //     var hideButton = document.getElementById('hideButton');
-                    //     var formulaire = document.getElementById("formulaire");
-                    //     if (formulaire.style.display === 'none') {
-                    //         formulaire.style.display = 'block';
-                    //         //                  hideButton.style.backgroundColor = "#008F28";
-                    //     } else if (formulaire.style.display === 'block') {
-                    //         formulaire.style.display = 'none';
-                    //         //   hideButton.style.backgroundColor = "transparent";
-                    //     }
-                    //     else {
-                    //         formulaire.style.display = 'block';
-                    //         //             hideButton.style.backgroundColor = "#008F28";
-                    //     }
-
-                    // }
-
-
-
-
-
-
-                    // else if (modalTitle.textContent === "Support Action") {
-                    //     var hideButton = document.getElementById('support');
-                    //     console.log(hideButton.style.backgroundColor);
-                    //     if (hideButton.style.backgroundColor === "rgb(0, 143, 40)") {
-                    //         hideButton.style.backgroundColor = "transparent";
-                    //     }
-                    //     else if (hideButton.style.backgroundColor === "transparent") {
-                    //         hideButton.style.backgroundColor = "#008F28";
-                    //     }
-                    //     else if(hideButton.style.backgroundColor === ""){
-                    //         hideButton.style.backgroundColor = "#008F28";
-
-                    //     }
-                    // }
-                    // else if (modalTitle.textContent === "Start Action") {
-                    //     var hideButton = document.getElementById('start');
-                    //     if (hideButton.style.background === "rgb(0, 143, 40)") {
-                    //         hideButton.style.backgroundColor = "transparent";
-                    //     }
-                    //     else if (hideButton.style.backgroundColor === "transparent") {
-                    //         hideButton.style.backgroundColor = "#008F28";
-                    //     }
-                    //     else if (hideButton.style.backgroundColor === "") {
-                    //         hideButton.style.backgroundColor = "#008F28";
-
-                    //     }
-                    // }
-                    // else if (modalTitle.textContent === "Automatic Action") {
-                    //     var hideButton = document.getElementById('automatic');
-                    //     if (hideButton.style.background === "rgb(0, 143, 40)") {
-                    //         hideButton.style.backgroundColor = "transparent";
-                    //     }
-                    //     else if (hideButton.style.backgroundColor === "transparent") {
-                    //         hideButton.style.backgroundColor = "#008F28";
-                    //     }
-                    //     else if (hideButton.style.backgroundColor === "") {
-                    //         hideButton.style.backgroundColor = "#008F28";
-
-                    //     }
-                    // }
-
-                    // else {
-                    //     console.log(this.textContent);
-                    //     this.style.backgroundColor = "#008F28";
-                    // }
-
                 });
         });
     </script>
