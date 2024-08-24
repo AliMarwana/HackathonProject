@@ -41,11 +41,12 @@
             </li>
         </ul>
     </nav>
-    <div class="row youss-row w-100">
+    <div class="w-100 d-flex flex-column justify-content-start align-items-center pb-3">
+        <div class="row youss-row w-100 mb-0">
       @foreach(var lac in Model.LacInfos)
         {
-            <div class="col-sm-6">
-                <div class="card border-light youss-card">
+            <div class="col-sm-6 mb-0">
+                <div class="card border-light youss-card mb-0">
                     <div class="card-body">
                         <div style="display:flex; justify-content:space-between;">
                             <h5 class="card-title">@lac.DisplayName</h5>
@@ -65,7 +66,7 @@
                         <p class="card-text">@lac.LacMode.Description</p>
                         <hr />
                         <div class="row mb-1">
-                            <div class="col m-1">
+                            @* <div class="col m-1">
                                 <button class="btn btn-success btn-block gap-3" style="display:flex; justify-content:center;">
                                     <svg width="25" height="23" viewBox="0 0 49 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M24.375 32.5C23.465 32.5 22.75 31.785 22.75 30.875V8.125C22.75 7.215 23.465 6.5 24.375 6.5C25.285 6.5 26 7.215 26 8.125V30.875C26 31.785 25.285 32.5 24.375 32.5Z" fill="white" />
@@ -73,7 +74,7 @@
                                     </svg>
                                     <div> Start </div>
                                 </button>
-                            </div>
+                            </div> *@
                             <div class="col m-1">
                                 <button class="btn btn-danger btn-block gap-3" style="display:flex; justify-content:center;">
                                     <svg width="25" height="25" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -87,7 +88,7 @@
                                         </defs>
                                     </svg>
 
-                                    <div> Stop </div>
+                                    <div> Emergency Stop </div>
                                 </button>
                             </div>
                         </div>
@@ -95,8 +96,27 @@
                     </div>
                 </div>
             </div>
-        }
+                
+            }
  
+    </div>
+        @if (Model.LacInfos[0].LacMode.Description == "Off" && Model.LacInfos[1].LacMode.Description == "Off")
+        {
+            <img src="/assets/img/machine_default.png" height="300" class="w-50 m-0" />
+        }
+        else if (Model.LacInfos[0].LacMode.Description != "Off" && Model.LacInfos[1].LacMode.Description != "Off")
+        {
+            <img src="/assets/img/Lac2_animation.gif" height="350" class="w-50 m-0" />
+        }
+        else if (Model.LacInfos[1].LacMode.Description != "Off")
+        {
+            <img src="/assets/img/Lac2_animation.gif" height="350" class="w-50 m-0" />
+        }
+        else if (Model.LacInfos[0].LacMode.Description != "Off")
+        {
+            <img src="/assets/img/Lac1_animation.gif" height="350" class="w-50 m-0" />
+        }
+
     </div>
 </div>
 
