@@ -12,7 +12,8 @@
         public bool Lac2VoltageOn { get; set; }
         public int Lac1Mode { get;set; }
         public int Lac2Mode { get;set; }
-        public bool Lac2EmergencyOn { get; set; }
+        public bool Lac2EnergyOn { get; set; }
+        public bool Lac1EnergyOn { get; set; }
 
     }
 }
